@@ -1,4 +1,4 @@
-﻿namespace _112_1_w0
+﻿namespace booker
 {
     partial class Form1
     {

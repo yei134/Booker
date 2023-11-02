@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace _112_1_w0.Properties
+namespace booker.Properties
 {
 
 

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace _112_1_w0
+namespace booker
 {
     internal static class Program
     {
