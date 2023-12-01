@@ -40,17 +40,22 @@
             this.num = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.sum = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.button1 = new System.Windows.Forms.Button();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
+            this.books_sum = new System.Windows.Forms.Label();
+            this.books_price = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
+            this.books_name = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.sale_num = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.lookup_Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lookup_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lookup_price = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lookup_count = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label16 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.button3 = new System.Windows.Forms.Button();
@@ -66,40 +71,31 @@
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.tabPage4 = new System.Windows.Forms.TabPage();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.lookup_Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.lookup_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.lookup_price = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.lookup_count = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.textBox10 = new System.Windows.Forms.TextBox();
-            this.label17 = new System.Windows.Forms.Label();
-            this.textBox11 = new System.Windows.Forms.TextBox();
-            this.label18 = new System.Windows.Forms.Label();
-            this.label19 = new System.Windows.Forms.Label();
-            this.label20 = new System.Windows.Forms.Label();
-            this.label21 = new System.Windows.Forms.Label();
-            this.label22 = new System.Windows.Forms.Label();
-            this.label23 = new System.Windows.Forms.Label();
-            this.label24 = new System.Windows.Forms.Label();
-            this.label25 = new System.Windows.Forms.Label();
-            this.label26 = new System.Windows.Forms.Label();
+            this.label31 = new System.Windows.Forms.Label();
+            this.label29 = new System.Windows.Forms.Label();
+            this.label30 = new System.Windows.Forms.Label();
+            this.label27 = new System.Windows.Forms.Label();
+            this.label28 = new System.Windows.Forms.Label();
+            this.button5 = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
             this.dataGridView3 = new System.Windows.Forms.DataGridView();
             this.book_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.book_item = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.book_price = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.book_count = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.label27 = new System.Windows.Forms.Label();
-            this.label28 = new System.Windows.Forms.Label();
-            this.label29 = new System.Windows.Forms.Label();
-            this.label30 = new System.Windows.Forms.Label();
-            this.label31 = new System.Windows.Forms.Label();
-            this.button6 = new System.Windows.Forms.Button();
-            this.button7 = new System.Windows.Forms.Button();
-            this.button8 = new System.Windows.Forms.Button();
-            this.button9 = new System.Windows.Forms.Button();
+            this.label25 = new System.Windows.Forms.Label();
+            this.label26 = new System.Windows.Forms.Label();
+            this.label23 = new System.Windows.Forms.Label();
+            this.label24 = new System.Windows.Forms.Label();
+            this.label21 = new System.Windows.Forms.Label();
+            this.label22 = new System.Windows.Forms.Label();
+            this.label19 = new System.Windows.Forms.Label();
+            this.label20 = new System.Windows.Forms.Label();
+            this.textBox11 = new System.Windows.Forms.TextBox();
+            this.label18 = new System.Windows.Forms.Label();
+            this.textBox10 = new System.Windows.Forms.TextBox();
+            this.label17 = new System.Windows.Forms.Label();
+            this.tabPage4 = new System.Windows.Forms.TabPage();
             this.dataGridView4 = new System.Windows.Forms.DataGridView();
             this.overview_date = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.overview_class = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -107,15 +103,26 @@
             this.overview_classTotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.overview_dateCount = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.overview_dateTotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.button9 = new System.Windows.Forms.Button();
+            this.button8 = new System.Windows.Forms.Button();
+            this.button7 = new System.Windows.Forms.Button();
+            this.button6 = new System.Windows.Forms.Button();
+            this.tabPage5 = new System.Windows.Forms.TabPage();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.contactUsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.howToUseThisSystemToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.tabPage2.SuspendLayout();
-            this.tabPage3.SuspendLayout();
-            this.tabPage4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            this.tabPage3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
+            this.tabPage4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).BeginInit();
+            this.tabPage5.SuspendLayout();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -124,6 +131,7 @@
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Controls.Add(this.tabPage3);
             this.tabControl1.Controls.Add(this.tabPage4);
+            this.tabControl1.Controls.Add(this.tabPage5);
             this.tabControl1.ItemSize = new System.Drawing.Size(78, 50);
             this.tabControl1.Location = new System.Drawing.Point(12, 12);
             this.tabControl1.Name = "tabControl1";
@@ -138,13 +146,13 @@
             this.tabPage1.Controls.Add(this.button2);
             this.tabPage1.Controls.Add(this.dataGridView1);
             this.tabPage1.Controls.Add(this.button1);
-            this.tabPage1.Controls.Add(this.label8);
-            this.tabPage1.Controls.Add(this.label7);
+            this.tabPage1.Controls.Add(this.books_sum);
+            this.tabPage1.Controls.Add(this.books_price);
             this.tabPage1.Controls.Add(this.label6);
             this.tabPage1.Controls.Add(this.label5);
-            this.tabPage1.Controls.Add(this.label4);
+            this.tabPage1.Controls.Add(this.books_name);
             this.tabPage1.Controls.Add(this.label3);
-            this.tabPage1.Controls.Add(this.textBox2);
+            this.tabPage1.Controls.Add(this.sale_num);
             this.tabPage1.Controls.Add(this.label2);
             this.tabPage1.Controls.Add(this.textBox1);
             this.tabPage1.Controls.Add(this.label1);
@@ -183,6 +191,7 @@
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Id,
@@ -202,62 +211,58 @@
             this.Id.HeaderText = "標題";
             this.Id.MinimumWidth = 6;
             this.Id.Name = "Id";
-            this.Id.Width = 125;
             // 
             // item
             // 
             this.item.HeaderText = "項目";
             this.item.MinimumWidth = 6;
             this.item.Name = "item";
-            this.item.Width = 125;
             // 
             // price
             // 
             this.price.HeaderText = "金額";
             this.price.MinimumWidth = 6;
             this.price.Name = "price";
-            this.price.Width = 125;
             // 
             // num
             // 
             this.num.HeaderText = "數量";
             this.num.MinimumWidth = 6;
             this.num.Name = "num";
-            this.num.Width = 125;
             // 
             // sum
             // 
             this.sum.HeaderText = "小計";
             this.sum.MinimumWidth = 6;
             this.sum.Name = "sum";
-            this.sum.Width = 125;
             // 
             // button1
             // 
             this.button1.Location = new System.Drawing.Point(24, 213);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.Size = new System.Drawing.Size(75, 30);
             this.button1.TabIndex = 11;
             this.button1.Text = "結帳";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // label8
+            // books_sum
             // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(75, 176);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(92, 20);
-            this.label8.TabIndex = 10;
-            this.label8.Text = "books_sum";
+            this.books_sum.AutoSize = true;
+            this.books_sum.Location = new System.Drawing.Point(75, 176);
+            this.books_sum.Name = "books_sum";
+            this.books_sum.Size = new System.Drawing.Size(18, 20);
+            this.books_sum.TabIndex = 10;
+            this.books_sum.Text = "0";
             // 
-            // label7
+            // books_price
             // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(75, 140);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(97, 20);
-            this.label7.TabIndex = 9;
-            this.label7.Text = "books_price";
+            this.books_price.AutoSize = true;
+            this.books_price.Location = new System.Drawing.Point(75, 140);
+            this.books_price.Name = "books_price";
+            this.books_price.Size = new System.Drawing.Size(18, 20);
+            this.books_price.TabIndex = 9;
+            this.books_price.Text = "0";
             // 
             // label6
             // 
@@ -277,14 +282,14 @@
             this.label5.TabIndex = 6;
             this.label5.Text = "金額";
             // 
-            // label4
+            // books_name
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(75, 104);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(101, 20);
-            this.label4.TabIndex = 5;
-            this.label4.Text = "books_name";
+            this.books_name.AutoSize = true;
+            this.books_name.Location = new System.Drawing.Point(75, 104);
+            this.books_name.Name = "books_name";
+            this.books_name.Size = new System.Drawing.Size(68, 20);
+            this.books_name.TabIndex = 5;
+            this.books_name.Text = "unknow";
             // 
             // label3
             // 
@@ -295,12 +300,15 @@
             this.label3.TabIndex = 4;
             this.label3.Text = "名稱";
             // 
-            // textBox2
+            // sale_num
             // 
-            this.textBox2.Location = new System.Drawing.Point(75, 54);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(142, 31);
-            this.textBox2.TabIndex = 3;
+            this.sale_num.Location = new System.Drawing.Point(75, 54);
+            this.sale_num.Name = "sale_num";
+            this.sale_num.Size = new System.Drawing.Size(142, 31);
+            this.sale_num.TabIndex = 3;
+            this.sale_num.Text = "1";
+            this.sale_num.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.sale_num.TextChanged += new System.EventHandler(this.sale_num_TextChanged);
             // 
             // label2
             // 
@@ -317,6 +325,9 @@
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(142, 31);
             this.textBox1.TabIndex = 1;
+            this.textBox1.Text = "001";
+            this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // label1
             // 
@@ -351,6 +362,46 @@
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "查詢";
             this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // dataGridView2
+            // 
+            this.dataGridView2.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.lookup_Id,
+            this.lookup_name,
+            this.lookup_price,
+            this.lookup_count});
+            this.dataGridView2.Location = new System.Drawing.Point(286, 6);
+            this.dataGridView2.Name = "dataGridView2";
+            this.dataGridView2.RowHeadersWidth = 51;
+            this.dataGridView2.RowTemplate.Height = 27;
+            this.dataGridView2.Size = new System.Drawing.Size(676, 506);
+            this.dataGridView2.TabIndex = 16;
+            // 
+            // lookup_Id
+            // 
+            this.lookup_Id.HeaderText = "編號";
+            this.lookup_Id.MinimumWidth = 6;
+            this.lookup_Id.Name = "lookup_Id";
+            // 
+            // lookup_name
+            // 
+            this.lookup_name.HeaderText = "名稱";
+            this.lookup_name.MinimumWidth = 6;
+            this.lookup_name.Name = "lookup_name";
+            // 
+            // lookup_price
+            // 
+            this.lookup_price.HeaderText = "金額";
+            this.lookup_price.MinimumWidth = 6;
+            this.lookup_price.Name = "lookup_price";
+            // 
+            // lookup_count
+            // 
+            this.lookup_count.HeaderText = "數量";
+            this.lookup_count.MinimumWidth = 6;
+            this.lookup_count.Name = "lookup_count";
             // 
             // label16
             // 
@@ -496,245 +547,15 @@
             this.tabPage3.Text = "訂貨";
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
-            // tabPage4
+            // label31
             // 
-            this.tabPage4.Controls.Add(this.dataGridView4);
-            this.tabPage4.Controls.Add(this.button9);
-            this.tabPage4.Controls.Add(this.button8);
-            this.tabPage4.Controls.Add(this.button7);
-            this.tabPage4.Controls.Add(this.button6);
-            this.tabPage4.Location = new System.Drawing.Point(4, 54);
-            this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Size = new System.Drawing.Size(968, 518);
-            this.tabPage4.TabIndex = 3;
-            this.tabPage4.Text = "報表";
-            this.tabPage4.UseVisualStyleBackColor = true;
-            // 
-            // dataGridView2
-            // 
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.lookup_Id,
-            this.lookup_name,
-            this.lookup_price,
-            this.lookup_count});
-            this.dataGridView2.Location = new System.Drawing.Point(286, 6);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.RowHeadersWidth = 51;
-            this.dataGridView2.RowTemplate.Height = 27;
-            this.dataGridView2.Size = new System.Drawing.Size(676, 506);
-            this.dataGridView2.TabIndex = 16;
-            // 
-            // lookup_Id
-            // 
-            this.lookup_Id.HeaderText = "編號";
-            this.lookup_Id.MinimumWidth = 6;
-            this.lookup_Id.Name = "lookup_Id";
-            this.lookup_Id.Width = 125;
-            // 
-            // lookup_name
-            // 
-            this.lookup_name.HeaderText = "名稱";
-            this.lookup_name.MinimumWidth = 6;
-            this.lookup_name.Name = "lookup_name";
-            this.lookup_name.Width = 125;
-            // 
-            // lookup_price
-            // 
-            this.lookup_price.HeaderText = "金額";
-            this.lookup_price.MinimumWidth = 6;
-            this.lookup_price.Name = "lookup_price";
-            this.lookup_price.Width = 125;
-            // 
-            // lookup_count
-            // 
-            this.lookup_count.HeaderText = "數量";
-            this.lookup_count.MinimumWidth = 6;
-            this.lookup_count.Name = "lookup_count";
-            this.lookup_count.Width = 125;
-            // 
-            // textBox10
-            // 
-            this.textBox10.Location = new System.Drawing.Point(75, 17);
-            this.textBox10.Name = "textBox10";
-            this.textBox10.Size = new System.Drawing.Size(142, 31);
-            this.textBox10.TabIndex = 5;
-            // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(20, 20);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(49, 20);
-            this.label17.TabIndex = 4;
-            this.label17.Text = "編號";
-            // 
-            // textBox11
-            // 
-            this.textBox11.Location = new System.Drawing.Point(75, 54);
-            this.textBox11.Name = "textBox11";
-            this.textBox11.Size = new System.Drawing.Size(142, 31);
-            this.textBox11.TabIndex = 7;
-            // 
-            // label18
-            // 
-            this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(20, 57);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(49, 20);
-            this.label18.TabIndex = 6;
-            this.label18.Text = "數量";
-            // 
-            // label19
-            // 
-            this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(75, 98);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(101, 20);
-            this.label19.TabIndex = 9;
-            this.label19.Text = "books_name";
-            // 
-            // label20
-            // 
-            this.label20.AutoSize = true;
-            this.label20.Location = new System.Drawing.Point(20, 98);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(49, 20);
-            this.label20.TabIndex = 8;
-            this.label20.Text = "名稱";
-            // 
-            // label21
-            // 
-            this.label21.AutoSize = true;
-            this.label21.Location = new System.Drawing.Point(135, 131);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(131, 20);
-            this.label21.TabIndex = 11;
-            this.label21.Text = "book_suggestion";
-            // 
-            // label22
-            // 
-            this.label22.AutoSize = true;
-            this.label22.Location = new System.Drawing.Point(20, 131);
-            this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(109, 20);
-            this.label22.TabIndex = 10;
-            this.label22.Text = "建議訂貨量";
-            // 
-            // label23
-            // 
-            this.label23.AutoSize = true;
-            this.label23.Location = new System.Drawing.Point(135, 164);
-            this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(109, 20);
-            this.label23.TabIndex = 13;
-            this.label23.Text = "book_inStock";
-            // 
-            // label24
-            // 
-            this.label24.AutoSize = true;
-            this.label24.Location = new System.Drawing.Point(20, 164);
-            this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(109, 20);
-            this.label24.TabIndex = 12;
-            this.label24.Text = "目前庫存量";
-            // 
-            // label25
-            // 
-            this.label25.AutoSize = true;
-            this.label25.Location = new System.Drawing.Point(135, 196);
-            this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(112, 20);
-            this.label25.TabIndex = 15;
-            this.label25.Text = "book_recently";
-            // 
-            // label26
-            // 
-            this.label26.AutoSize = true;
-            this.label26.Location = new System.Drawing.Point(20, 196);
-            this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(118, 20);
-            this.label26.TabIndex = 14;
-            this.label26.Text = "過去7日銷售";
-            // 
-            // dataGridView3
-            // 
-            this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView3.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.book_id,
-            this.book_item,
-            this.book_price,
-            this.book_count});
-            this.dataGridView3.Location = new System.Drawing.Point(286, 6);
-            this.dataGridView3.Name = "dataGridView3";
-            this.dataGridView3.RowHeadersWidth = 51;
-            this.dataGridView3.RowTemplate.Height = 27;
-            this.dataGridView3.Size = new System.Drawing.Size(676, 453);
-            this.dataGridView3.TabIndex = 16;
-            // 
-            // book_id
-            // 
-            this.book_id.HeaderText = "編號";
-            this.book_id.MinimumWidth = 6;
-            this.book_id.Name = "book_id";
-            this.book_id.Width = 125;
-            // 
-            // book_item
-            // 
-            this.book_item.HeaderText = "項目";
-            this.book_item.MinimumWidth = 6;
-            this.book_item.Name = "book_item";
-            this.book_item.Width = 125;
-            // 
-            // book_price
-            // 
-            this.book_price.HeaderText = "單價";
-            this.book_price.MinimumWidth = 6;
-            this.book_price.Name = "book_price";
-            this.book_price.Width = 125;
-            // 
-            // book_count
-            // 
-            this.book_count.HeaderText = "數量";
-            this.book_count.MinimumWidth = 6;
-            this.book_count.Name = "book_count";
-            this.book_count.Width = 125;
-            // 
-            // button4
-            // 
-            this.button4.Location = new System.Drawing.Point(812, 462);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(150, 50);
-            this.button4.TabIndex = 17;
-            this.button4.Text = "上傳訂單";
-            this.button4.UseVisualStyleBackColor = true;
-            // 
-            // button5
-            // 
-            this.button5.Location = new System.Drawing.Point(24, 231);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(193, 50);
-            this.button5.TabIndex = 18;
-            this.button5.Text = "訂貨";
-            this.button5.UseVisualStyleBackColor = true;
-            // 
-            // label27
-            // 
-            this.label27.AutoSize = true;
-            this.label27.Location = new System.Drawing.Point(337, 477);
-            this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(94, 20);
-            this.label27.TabIndex = 20;
-            this.label27.Text = "book_count";
-            // 
-            // label28
-            // 
-            this.label28.AutoSize = true;
-            this.label28.Location = new System.Drawing.Point(282, 477);
-            this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(49, 20);
-            this.label28.TabIndex = 19;
-            this.label28.Text = "總量";
+            this.label31.AutoSize = true;
+            this.label31.Font = new System.Drawing.Font("新細明體", 24F);
+            this.label31.Location = new System.Drawing.Point(437, 469);
+            this.label31.Name = "label31";
+            this.label31.Size = new System.Drawing.Size(25, 40);
+            this.label31.TabIndex = 23;
+            this.label31.Text = "|";
             // 
             // label29
             // 
@@ -754,54 +575,203 @@
             this.label30.TabIndex = 21;
             this.label30.Text = "總額";
             // 
-            // label31
+            // label27
             // 
-            this.label31.AutoSize = true;
-            this.label31.Font = new System.Drawing.Font("新細明體", 24F);
-            this.label31.Location = new System.Drawing.Point(437, 469);
-            this.label31.Name = "label31";
-            this.label31.Size = new System.Drawing.Size(25, 40);
-            this.label31.TabIndex = 23;
-            this.label31.Text = "|";
+            this.label27.AutoSize = true;
+            this.label27.Location = new System.Drawing.Point(337, 477);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(94, 20);
+            this.label27.TabIndex = 20;
+            this.label27.Text = "book_count";
             // 
-            // button6
+            // label28
             // 
-            this.button6.Location = new System.Drawing.Point(20, 20);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(150, 50);
-            this.button6.TabIndex = 18;
-            this.button6.Text = "進貨統計";
-            this.button6.UseVisualStyleBackColor = true;
+            this.label28.AutoSize = true;
+            this.label28.Location = new System.Drawing.Point(282, 477);
+            this.label28.Name = "label28";
+            this.label28.Size = new System.Drawing.Size(49, 20);
+            this.label28.TabIndex = 19;
+            this.label28.Text = "總量";
             // 
-            // button7
+            // button5
             // 
-            this.button7.Location = new System.Drawing.Point(20, 76);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(150, 50);
-            this.button7.TabIndex = 19;
-            this.button7.Text = "銷售統計";
-            this.button7.UseVisualStyleBackColor = true;
+            this.button5.Location = new System.Drawing.Point(24, 231);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(193, 50);
+            this.button5.TabIndex = 18;
+            this.button5.Text = "訂貨";
+            this.button5.UseVisualStyleBackColor = true;
             // 
-            // button8
+            // button4
             // 
-            this.button8.Location = new System.Drawing.Point(20, 132);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(150, 50);
-            this.button8.TabIndex = 20;
-            this.button8.Text = "來客統計";
-            this.button8.UseVisualStyleBackColor = true;
+            this.button4.Location = new System.Drawing.Point(812, 462);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(150, 50);
+            this.button4.TabIndex = 17;
+            this.button4.Text = "上傳訂單";
+            this.button4.UseVisualStyleBackColor = true;
             // 
-            // button9
+            // dataGridView3
             // 
-            this.button9.Location = new System.Drawing.Point(20, 188);
-            this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(150, 50);
-            this.button9.TabIndex = 21;
-            this.button9.Text = "設定";
-            this.button9.UseVisualStyleBackColor = true;
+            this.dataGridView3.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView3.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.book_id,
+            this.book_item,
+            this.book_price,
+            this.book_count});
+            this.dataGridView3.Location = new System.Drawing.Point(286, 6);
+            this.dataGridView3.Name = "dataGridView3";
+            this.dataGridView3.RowHeadersWidth = 51;
+            this.dataGridView3.RowTemplate.Height = 27;
+            this.dataGridView3.Size = new System.Drawing.Size(676, 453);
+            this.dataGridView3.TabIndex = 16;
+            // 
+            // book_id
+            // 
+            this.book_id.HeaderText = "編號";
+            this.book_id.MinimumWidth = 6;
+            this.book_id.Name = "book_id";
+            // 
+            // book_item
+            // 
+            this.book_item.HeaderText = "項目";
+            this.book_item.MinimumWidth = 6;
+            this.book_item.Name = "book_item";
+            // 
+            // book_price
+            // 
+            this.book_price.HeaderText = "單價";
+            this.book_price.MinimumWidth = 6;
+            this.book_price.Name = "book_price";
+            // 
+            // book_count
+            // 
+            this.book_count.HeaderText = "數量";
+            this.book_count.MinimumWidth = 6;
+            this.book_count.Name = "book_count";
+            // 
+            // label25
+            // 
+            this.label25.AutoSize = true;
+            this.label25.Location = new System.Drawing.Point(135, 196);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(112, 20);
+            this.label25.TabIndex = 15;
+            this.label25.Text = "book_recently";
+            // 
+            // label26
+            // 
+            this.label26.AutoSize = true;
+            this.label26.Location = new System.Drawing.Point(20, 196);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(118, 20);
+            this.label26.TabIndex = 14;
+            this.label26.Text = "過去7日銷售";
+            // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.Location = new System.Drawing.Point(135, 164);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(109, 20);
+            this.label23.TabIndex = 13;
+            this.label23.Text = "book_inStock";
+            // 
+            // label24
+            // 
+            this.label24.AutoSize = true;
+            this.label24.Location = new System.Drawing.Point(20, 164);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(109, 20);
+            this.label24.TabIndex = 12;
+            this.label24.Text = "目前庫存量";
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Location = new System.Drawing.Point(135, 131);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(131, 20);
+            this.label21.TabIndex = 11;
+            this.label21.Text = "book_suggestion";
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Location = new System.Drawing.Point(20, 131);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(109, 20);
+            this.label22.TabIndex = 10;
+            this.label22.Text = "建議訂貨量";
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Location = new System.Drawing.Point(75, 98);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(101, 20);
+            this.label19.TabIndex = 9;
+            this.label19.Text = "books_name";
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Location = new System.Drawing.Point(20, 98);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(49, 20);
+            this.label20.TabIndex = 8;
+            this.label20.Text = "名稱";
+            // 
+            // textBox11
+            // 
+            this.textBox11.Location = new System.Drawing.Point(75, 54);
+            this.textBox11.Name = "textBox11";
+            this.textBox11.Size = new System.Drawing.Size(142, 31);
+            this.textBox11.TabIndex = 7;
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Location = new System.Drawing.Point(20, 57);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(49, 20);
+            this.label18.TabIndex = 6;
+            this.label18.Text = "數量";
+            // 
+            // textBox10
+            // 
+            this.textBox10.Location = new System.Drawing.Point(75, 17);
+            this.textBox10.Name = "textBox10";
+            this.textBox10.Size = new System.Drawing.Size(142, 31);
+            this.textBox10.TabIndex = 5;
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(20, 20);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(49, 20);
+            this.label17.TabIndex = 4;
+            this.label17.Text = "編號";
+            // 
+            // tabPage4
+            // 
+            this.tabPage4.Controls.Add(this.dataGridView4);
+            this.tabPage4.Controls.Add(this.button9);
+            this.tabPage4.Controls.Add(this.button8);
+            this.tabPage4.Controls.Add(this.button7);
+            this.tabPage4.Controls.Add(this.button6);
+            this.tabPage4.Location = new System.Drawing.Point(4, 54);
+            this.tabPage4.Name = "tabPage4";
+            this.tabPage4.Size = new System.Drawing.Size(968, 518);
+            this.tabPage4.TabIndex = 3;
+            this.tabPage4.Text = "報表";
+            this.tabPage4.UseVisualStyleBackColor = true;
             // 
             // dataGridView4
             // 
+            this.dataGridView4.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView4.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView4.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.overview_date,
@@ -822,42 +792,115 @@
             this.overview_date.HeaderText = "日期";
             this.overview_date.MinimumWidth = 6;
             this.overview_date.Name = "overview_date";
-            this.overview_date.Width = 125;
             // 
             // overview_class
             // 
             this.overview_class.HeaderText = "類別";
             this.overview_class.MinimumWidth = 6;
             this.overview_class.Name = "overview_class";
-            this.overview_class.Width = 125;
             // 
             // overview_count
             // 
             this.overview_count.HeaderText = "數量";
             this.overview_count.MinimumWidth = 6;
             this.overview_count.Name = "overview_count";
-            this.overview_count.Width = 125;
             // 
             // overview_classTotal
             // 
             this.overview_classTotal.HeaderText = "類別額";
             this.overview_classTotal.MinimumWidth = 6;
             this.overview_classTotal.Name = "overview_classTotal";
-            this.overview_classTotal.Width = 125;
             // 
             // overview_dateCount
             // 
             this.overview_dateCount.HeaderText = "日數量";
             this.overview_dateCount.MinimumWidth = 6;
             this.overview_dateCount.Name = "overview_dateCount";
-            this.overview_dateCount.Width = 125;
             // 
             // overview_dateTotal
             // 
             this.overview_dateTotal.HeaderText = "日金額";
             this.overview_dateTotal.MinimumWidth = 6;
             this.overview_dateTotal.Name = "overview_dateTotal";
-            this.overview_dateTotal.Width = 125;
+            // 
+            // button9
+            // 
+            this.button9.Location = new System.Drawing.Point(20, 188);
+            this.button9.Name = "button9";
+            this.button9.Size = new System.Drawing.Size(150, 50);
+            this.button9.TabIndex = 21;
+            this.button9.Text = "設定";
+            this.button9.UseVisualStyleBackColor = true;
+            // 
+            // button8
+            // 
+            this.button8.Location = new System.Drawing.Point(20, 132);
+            this.button8.Name = "button8";
+            this.button8.Size = new System.Drawing.Size(150, 50);
+            this.button8.TabIndex = 20;
+            this.button8.Text = "來客統計";
+            this.button8.UseVisualStyleBackColor = true;
+            // 
+            // button7
+            // 
+            this.button7.Location = new System.Drawing.Point(20, 76);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(150, 50);
+            this.button7.TabIndex = 19;
+            this.button7.Text = "銷售統計";
+            this.button7.UseVisualStyleBackColor = true;
+            // 
+            // button6
+            // 
+            this.button6.Location = new System.Drawing.Point(20, 20);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(150, 50);
+            this.button6.TabIndex = 18;
+            this.button6.Text = "進貨統計";
+            this.button6.UseVisualStyleBackColor = true;
+            // 
+            // tabPage5
+            // 
+            this.tabPage5.Controls.Add(this.menuStrip1);
+            this.tabPage5.Location = new System.Drawing.Point(4, 54);
+            this.tabPage5.Name = "tabPage5";
+            this.tabPage5.Size = new System.Drawing.Size(968, 518);
+            this.tabPage5.TabIndex = 4;
+            this.tabPage5.Text = "其他";
+            this.tabPage5.UseVisualStyleBackColor = true;
+            // 
+            // menuStrip1
+            // 
+            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripMenuItem1});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(968, 27);
+            this.menuStrip1.TabIndex = 0;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // toolStripMenuItem1
+            // 
+            this.toolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.contactUsToolStripMenuItem,
+            this.howToUseThisSystemToolStripMenuItem});
+            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(65, 24);
+            this.toolStripMenuItem1.Text = "About";
+            // 
+            // contactUsToolStripMenuItem
+            // 
+            this.contactUsToolStripMenuItem.Name = "contactUsToolStripMenuItem";
+            this.contactUsToolStripMenuItem.Size = new System.Drawing.Size(256, 26);
+            this.contactUsToolStripMenuItem.Text = "Contact Us";
+            this.contactUsToolStripMenuItem.Click += new System.EventHandler(this.contactUsToolStripMenuItem_Click);
+            // 
+            // howToUseThisSystemToolStripMenuItem
+            // 
+            this.howToUseThisSystemToolStripMenuItem.Name = "howToUseThisSystemToolStripMenuItem";
+            this.howToUseThisSystemToolStripMenuItem.Size = new System.Drawing.Size(256, 26);
+            this.howToUseThisSystemToolStripMenuItem.Text = "How to Use this System";
             // 
             // Form1
             // 
@@ -866,6 +909,7 @@
             this.ClientSize = new System.Drawing.Size(1000, 600);
             this.Controls.Add(this.tabControl1);
             this.Font = new System.Drawing.Font("新細明體", 12F);
+            this.MainMenuStrip = this.menuStrip1;
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Form1";
             this.Text = "Booker";
@@ -875,12 +919,16 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.tabPage3.ResumeLayout(false);
             this.tabPage3.PerformLayout();
-            this.tabPage4.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
+            this.tabPage4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).EndInit();
+            this.tabPage5.ResumeLayout(false);
+            this.tabPage5.PerformLayout();
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -894,12 +942,12 @@
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TabPage tabPage4;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label books_name;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox sale_num;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label books_sum;
+        private System.Windows.Forms.Label books_price;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button button1;
@@ -966,6 +1014,11 @@
         private System.Windows.Forms.Button button8;
         private System.Windows.Forms.Button button7;
         private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.TabPage tabPage5;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem contactUsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem howToUseThisSystemToolStripMenuItem;
     }
 }
 
