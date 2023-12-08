@@ -112,6 +112,7 @@
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.contactUsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.howToUseThisSystemToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.button10 = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -757,6 +758,7 @@
             // 
             // tabPage4
             // 
+            this.tabPage4.Controls.Add(this.button10);
             this.tabPage4.Controls.Add(this.dataGridView4);
             this.tabPage4.Controls.Add(this.button9);
             this.tabPage4.Controls.Add(this.button8);
@@ -886,7 +888,7 @@
             this.contactUsToolStripMenuItem,
             this.howToUseThisSystemToolStripMenuItem});
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(65, 24);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(65, 23);
             this.toolStripMenuItem1.Text = "About";
             // 
             // contactUsToolStripMenuItem
@@ -901,6 +903,15 @@
             this.howToUseThisSystemToolStripMenuItem.Name = "howToUseThisSystemToolStripMenuItem";
             this.howToUseThisSystemToolStripMenuItem.Size = new System.Drawing.Size(256, 26);
             this.howToUseThisSystemToolStripMenuItem.Text = "How to Use this System";
+            // 
+            // button10
+            // 
+            this.button10.Location = new System.Drawing.Point(20, 244);
+            this.button10.Name = "button10";
+            this.button10.Size = new System.Drawing.Size(150, 50);
+            this.button10.TabIndex = 23;
+            this.button10.Text = "匯出報表";
+            this.button10.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 
@@ -1019,6 +1030,7 @@
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem contactUsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem howToUseThisSystemToolStripMenuItem;
+        private System.Windows.Forms.Button button10;
     }
 }
 
