@@ -96,6 +96,7 @@
             this.textBox10 = new System.Windows.Forms.TextBox();
             this.label17 = new System.Windows.Forms.Label();
             this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.button10 = new System.Windows.Forms.Button();
             this.dataGridView4 = new System.Windows.Forms.DataGridView();
             this.overview_date = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.overview_class = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -112,7 +113,6 @@
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.contactUsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.howToUseThisSystemToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.button10 = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -189,6 +189,7 @@
             this.button2.TabIndex = 13;
             this.button2.Text = "結帳";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // dataGridView1
             // 
@@ -771,6 +772,15 @@
             this.tabPage4.Text = "報表";
             this.tabPage4.UseVisualStyleBackColor = true;
             // 
+            // button10
+            // 
+            this.button10.Location = new System.Drawing.Point(20, 244);
+            this.button10.Name = "button10";
+            this.button10.Size = new System.Drawing.Size(150, 50);
+            this.button10.TabIndex = 23;
+            this.button10.Text = "匯出報表";
+            this.button10.UseVisualStyleBackColor = true;
+            // 
             // dataGridView4
             // 
             this.dataGridView4.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
@@ -878,7 +888,7 @@
             this.toolStripMenuItem1});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(968, 27);
+            this.menuStrip1.Size = new System.Drawing.Size(968, 28);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -888,30 +898,21 @@
             this.contactUsToolStripMenuItem,
             this.howToUseThisSystemToolStripMenuItem});
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(65, 23);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(64, 24);
             this.toolStripMenuItem1.Text = "About";
             // 
             // contactUsToolStripMenuItem
             // 
             this.contactUsToolStripMenuItem.Name = "contactUsToolStripMenuItem";
-            this.contactUsToolStripMenuItem.Size = new System.Drawing.Size(256, 26);
+            this.contactUsToolStripMenuItem.Size = new System.Drawing.Size(247, 26);
             this.contactUsToolStripMenuItem.Text = "Contact Us";
             this.contactUsToolStripMenuItem.Click += new System.EventHandler(this.contactUsToolStripMenuItem_Click);
             // 
             // howToUseThisSystemToolStripMenuItem
             // 
             this.howToUseThisSystemToolStripMenuItem.Name = "howToUseThisSystemToolStripMenuItem";
-            this.howToUseThisSystemToolStripMenuItem.Size = new System.Drawing.Size(256, 26);
+            this.howToUseThisSystemToolStripMenuItem.Size = new System.Drawing.Size(247, 26);
             this.howToUseThisSystemToolStripMenuItem.Text = "How to Use this System";
-            // 
-            // button10
-            // 
-            this.button10.Location = new System.Drawing.Point(20, 244);
-            this.button10.Name = "button10";
-            this.button10.Size = new System.Drawing.Size(150, 50);
-            this.button10.TabIndex = 23;
-            this.button10.Text = "匯出報表";
-            this.button10.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 

@@ -18,8 +18,9 @@ namespace booker
 
         public class DBConfig
         {
+            //DB位置設定
             //log.db要放在【bin\Debug底下】      
-            public static string dbFile = Application.StartupPath + @"\log.db";
+            public static string dbFile = Application.StartupPath + @"\booker.db";
 
             public static string dbPath = "Data source=" + dbFile;
 
@@ -30,6 +31,7 @@ namespace booker
 
         private void Load_DB()
         {
+            //連線載入DB
             DBConfig.sqlite_connect = new SQLiteConnection(DBConfig.dbPath);
             DBConfig.sqlite_connect.Open();// Open
 
@@ -39,8 +41,11 @@ namespace booker
         {
             this.dataGridView1.Rows.Clear();
 
+            //撰寫要執行的sql指令
             string sql = @"SELECT * from record;";
+            //建立sqlite指令
             DBConfig.sqlite_cmd = new SQLiteCommand(sql, DBConfig.sqlite_connect);
+            //執行sql
             DBConfig.sqlite_datareader = DBConfig.sqlite_cmd.ExecuteReader();
 
             if (DBConfig.sqlite_datareader.HasRows)
@@ -69,6 +74,51 @@ namespace booker
                 }
                 DBConfig.sqlite_datareader.Close();
             }
+        }
+        private void Insert_DB_Sales()
+        {
+            //======建立銷售紀錄======
+            //撰寫要執行的sql指令；先設定total=0
+            string sql_sale_insert = @"INSERT INTO 
+   sale  (total,members_id,employs_id,date)
+   VALUES (500, 2,  'California', 32, 20000.00 );
+SELECT last_insert_rowid();";//改
+            //建立sqlite指令
+            DBConfig.sqlite_cmd = new SQLiteCommand(sql_sale_insert, DBConfig.sqlite_connect);
+            //執行sql
+            //DBConfig.sqlite_cmd.ExecuteNonQuery();
+            string sales_id = DBConfig.sqlite_cmd.ExecuteScalar().ToString();//改
+
+            //======建立銷售明細======
+            int total = 0;
+            foreach (DataGridViewRow row in dataGridView1.Rows)
+            {
+                if (!row.IsNewRow) // 排除新行（通常是用于添加新数据的行）
+                {
+                    //取出資料表所需欄位
+                    string bookName = row.Cells["ColumnName1"].Value.ToString(); // 替换 "ColumnName1" 为你的列名
+                    int price = Convert.ToInt32(row.Cells["ColumnName2"].Value); // 替换 "ColumnName2" 为你的列名
+                    string category = row.Cells["ColumnName3"].Value.ToString(); // 替换 "ColumnName3" 为你的列名
+                    total += price;
+
+                    string sql_salebook_insert = $"INSERT INTO salebook (sales_id,[欄位]) VALUES ({sales_id}[值]);";//改
+                    //建立sqlite指令
+                    DBConfig.sqlite_cmd = new SQLiteCommand(sql_salebook_insert, DBConfig.sqlite_connect);
+                    //執行sql
+                    DBConfig.sqlite_cmd.ExecuteNonQuery();
+                }
+            }
+
+            //======更新銷售紀錄======
+            //撰寫要執行的sql指令；先設定total=0
+            string sql_sale_update = $"UPDATE sale SET total = {total} WHERE id = {sales_id} ; ";//改
+            //建立sqlite指令
+            DBConfig.sqlite_cmd = new SQLiteCommand(sql_sale_insert, DBConfig.sqlite_connect);
+            //執行sql
+            DBConfig.sqlite_cmd.ExecuteNonQuery();
+
+            //刪除購物車
+            this.dataGridView1.Rows.Clear();
         }
         public void get_book_info()
         {
@@ -102,6 +152,7 @@ namespace booker
         public Form1()
         {
             InitializeComponent();
+            Load_DB();
             get_book_info();
             sales_subtotal();
         }
@@ -130,6 +181,11 @@ namespace booker
         private void contactUsToolStripMenuItem_Click(object sender, EventArgs e)
         {
             MessageBox.Show("Student's ID is 092214133.");
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Insert_DB_Sales();
         }
     }
 }
