@@ -79,10 +79,9 @@ namespace booker
         {
             //======建立銷售紀錄======
             //撰寫要執行的sql指令；先設定total=0
-            string sql_sale_insert = @"INSERT INTO 
-   sale  (total,members_id,employs_id,date)
-   VALUES (500, 2,  'California', 32, 20000.00 );
-SELECT last_insert_rowid();";//改
+            string member = input_member.Text;
+            string date = DateTime.Now.ToString("yyyy-MM-dd hh:mm:ss");
+            string sql_sale_insert = $"INSERT INTO  sale  (total,member_id,employ_id,date) VALUES (0, '{member}',  '123', '{date}' ); SELECT last_insert_rowid();";//改
             //建立sqlite指令
             DBConfig.sqlite_cmd = new SQLiteCommand(sql_sale_insert, DBConfig.sqlite_connect);
             //執行sql
@@ -96,12 +95,12 @@ SELECT last_insert_rowid();";//改
                 if (!row.IsNewRow) // 排除新行（通常是用于添加新数据的行）
                 {
                     //取出資料表所需欄位
-                    string bookName = row.Cells["ColumnName1"].Value.ToString(); // 替换 "ColumnName1" 为你的列名
-                    int price = Convert.ToInt32(row.Cells["ColumnName2"].Value); // 替换 "ColumnName2" 为你的列名
-                    string category = row.Cells["ColumnName3"].Value.ToString(); // 替换 "ColumnName3" 为你的列名
-                    total += price;
+                    string book_name = row.Cells["Id"].Value.ToString();
+                    int num = Convert.ToInt32(row.Cells["num"].Value);
+                    int sub_total = Convert.ToInt32(row.Cells["sum"].Value);
+                    total += sub_total;
 
-                    string sql_salebook_insert = $"INSERT INTO salebook (sales_id,[欄位]) VALUES ({sales_id}[值]);";//改
+                    string sql_salebook_insert = $"INSERT INTO salebook (books_id,sales_id,num) VALUES ('{book_name}','{sales_id}',{num});";//改
                     //建立sqlite指令
                     DBConfig.sqlite_cmd = new SQLiteCommand(sql_salebook_insert, DBConfig.sqlite_connect);
                     //執行sql
@@ -111,7 +110,7 @@ SELECT last_insert_rowid();";//改
 
             //======更新銷售紀錄======
             //撰寫要執行的sql指令；先設定total=0
-            string sql_sale_update = $"UPDATE sale SET total = {total} WHERE id = {sales_id} ; ";//改
+            string sql_sale_update = $"UPDATE sale SET total = {total} WHERE id = {sales_id} ; ";
             //建立sqlite指令
             DBConfig.sqlite_cmd = new SQLiteCommand(sql_sale_insert, DBConfig.sqlite_connect);
             //執行sql
@@ -122,12 +121,12 @@ SELECT last_insert_rowid();";//改
         }
         public void get_book_info()
         {
-            if (textBox1.Text == "001")
+            if (input_bookId.Text == "001")
             {
                 books_name.Text = "測試書本一";
                 books_price.Text = "200";
             }
-            else if (textBox1.Text == "002")
+            else if (input_bookId.Text == "002")
             {
                 books_name.Text = "測試書本二";
                 books_price.Text = "400";
@@ -175,7 +174,7 @@ SELECT last_insert_rowid();";//改
             double subtotal = Convert.ToDouble((string)books_sum.Text);
 
             DataGridViewRowCollection rows = dataGridView1.Rows;
-            rows.Add("", books_name.Text, price, num, subtotal);
+            rows.Add(input_bookId.Text, books_name.Text, price, num, subtotal);
         }
 
         private void contactUsToolStripMenuItem_Click(object sender, EventArgs e)

@@ -30,15 +30,10 @@
         {
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.input_member = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.item = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.price = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.num = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.sum = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.button1 = new System.Windows.Forms.Button();
             this.books_sum = new System.Windows.Forms.Label();
             this.books_price = new System.Windows.Forms.Label();
@@ -48,7 +43,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.sale_num = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.input_bookId = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
@@ -113,6 +108,11 @@
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.contactUsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.howToUseThisSystemToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.item = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.price = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.num = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sum = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -142,7 +142,7 @@
             // 
             // tabPage1
             // 
-            this.tabPage1.Controls.Add(this.textBox3);
+            this.tabPage1.Controls.Add(this.input_member);
             this.tabPage1.Controls.Add(this.label9);
             this.tabPage1.Controls.Add(this.button2);
             this.tabPage1.Controls.Add(this.dataGridView1);
@@ -155,7 +155,7 @@
             this.tabPage1.Controls.Add(this.label3);
             this.tabPage1.Controls.Add(this.sale_num);
             this.tabPage1.Controls.Add(this.label2);
-            this.tabPage1.Controls.Add(this.textBox1);
+            this.tabPage1.Controls.Add(this.input_bookId);
             this.tabPage1.Controls.Add(this.label1);
             this.tabPage1.Location = new System.Drawing.Point(4, 54);
             this.tabPage1.Name = "tabPage1";
@@ -165,12 +165,12 @@
             this.tabPage1.Text = "銷售";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
-            // textBox3
+            // input_member
             // 
-            this.textBox3.Location = new System.Drawing.Point(337, 474);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(142, 31);
-            this.textBox3.TabIndex = 15;
+            this.input_member.Location = new System.Drawing.Point(337, 474);
+            this.input_member.Name = "input_member";
+            this.input_member.Size = new System.Drawing.Size(142, 31);
+            this.input_member.TabIndex = 15;
             // 
             // label9
             // 
@@ -207,36 +207,6 @@
             this.dataGridView1.RowTemplate.Height = 27;
             this.dataGridView1.Size = new System.Drawing.Size(676, 453);
             this.dataGridView1.TabIndex = 12;
-            // 
-            // Id
-            // 
-            this.Id.HeaderText = "標題";
-            this.Id.MinimumWidth = 6;
-            this.Id.Name = "Id";
-            // 
-            // item
-            // 
-            this.item.HeaderText = "項目";
-            this.item.MinimumWidth = 6;
-            this.item.Name = "item";
-            // 
-            // price
-            // 
-            this.price.HeaderText = "金額";
-            this.price.MinimumWidth = 6;
-            this.price.Name = "price";
-            // 
-            // num
-            // 
-            this.num.HeaderText = "數量";
-            this.num.MinimumWidth = 6;
-            this.num.Name = "num";
-            // 
-            // sum
-            // 
-            this.sum.HeaderText = "小計";
-            this.sum.MinimumWidth = 6;
-            this.sum.Name = "sum";
             // 
             // button1
             // 
@@ -321,15 +291,15 @@
             this.label2.TabIndex = 2;
             this.label2.Text = "數量";
             // 
-            // textBox1
+            // input_bookId
             // 
-            this.textBox1.Location = new System.Drawing.Point(75, 17);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(142, 31);
-            this.textBox1.TabIndex = 1;
-            this.textBox1.Text = "001";
-            this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            this.input_bookId.Location = new System.Drawing.Point(75, 17);
+            this.input_bookId.Name = "input_bookId";
+            this.input_bookId.Size = new System.Drawing.Size(142, 31);
+            this.input_bookId.TabIndex = 1;
+            this.input_bookId.Text = "001";
+            this.input_bookId.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.input_bookId.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // label1
             // 
@@ -888,7 +858,7 @@
             this.toolStripMenuItem1});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(968, 28);
+            this.menuStrip1.Size = new System.Drawing.Size(968, 27);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -898,21 +868,51 @@
             this.contactUsToolStripMenuItem,
             this.howToUseThisSystemToolStripMenuItem});
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(64, 24);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(65, 23);
             this.toolStripMenuItem1.Text = "About";
             // 
             // contactUsToolStripMenuItem
             // 
             this.contactUsToolStripMenuItem.Name = "contactUsToolStripMenuItem";
-            this.contactUsToolStripMenuItem.Size = new System.Drawing.Size(247, 26);
+            this.contactUsToolStripMenuItem.Size = new System.Drawing.Size(256, 26);
             this.contactUsToolStripMenuItem.Text = "Contact Us";
             this.contactUsToolStripMenuItem.Click += new System.EventHandler(this.contactUsToolStripMenuItem_Click);
             // 
             // howToUseThisSystemToolStripMenuItem
             // 
             this.howToUseThisSystemToolStripMenuItem.Name = "howToUseThisSystemToolStripMenuItem";
-            this.howToUseThisSystemToolStripMenuItem.Size = new System.Drawing.Size(247, 26);
+            this.howToUseThisSystemToolStripMenuItem.Size = new System.Drawing.Size(256, 26);
             this.howToUseThisSystemToolStripMenuItem.Text = "How to Use this System";
+            // 
+            // Id
+            // 
+            this.Id.HeaderText = "編號";
+            this.Id.MinimumWidth = 6;
+            this.Id.Name = "Id";
+            // 
+            // item
+            // 
+            this.item.HeaderText = "項目";
+            this.item.MinimumWidth = 6;
+            this.item.Name = "item";
+            // 
+            // price
+            // 
+            this.price.HeaderText = "金額";
+            this.price.MinimumWidth = 6;
+            this.price.Name = "price";
+            // 
+            // num
+            // 
+            this.num.HeaderText = "數量";
+            this.num.MinimumWidth = 6;
+            this.num.Name = "num";
+            // 
+            // sum
+            // 
+            this.sum.HeaderText = "小計";
+            this.sum.MinimumWidth = 6;
+            this.sum.Name = "sum";
             // 
             // Form1
             // 
@@ -951,7 +951,7 @@
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.TabPage tabPage3;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox input_bookId;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TabPage tabPage4;
         private System.Windows.Forms.Label books_name;
@@ -964,14 +964,9 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox input_member;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Id;
-        private System.Windows.Forms.DataGridViewTextBoxColumn item;
-        private System.Windows.Forms.DataGridViewTextBoxColumn price;
-        private System.Windows.Forms.DataGridViewTextBoxColumn num;
-        private System.Windows.Forms.DataGridViewTextBoxColumn sum;
         private System.Windows.Forms.TextBox textBox8;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.TextBox textBox7;
@@ -1032,6 +1027,11 @@
         private System.Windows.Forms.ToolStripMenuItem contactUsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem howToUseThisSystemToolStripMenuItem;
         private System.Windows.Forms.Button button10;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn item;
+        private System.Windows.Forms.DataGridViewTextBoxColumn price;
+        private System.Windows.Forms.DataGridViewTextBoxColumn num;
+        private System.Windows.Forms.DataGridViewTextBoxColumn sum;
     }
 }
 
