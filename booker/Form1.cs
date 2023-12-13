@@ -9,6 +9,7 @@ using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace booker
 {
@@ -112,24 +113,39 @@ namespace booker
             //撰寫要執行的sql指令；先設定total=0
             string sql_sale_update = $"UPDATE sale SET total = {total} WHERE id = {sales_id} ; ";
             //建立sqlite指令
-            DBConfig.sqlite_cmd = new SQLiteCommand(sql_sale_insert, DBConfig.sqlite_connect);
+            DBConfig.sqlite_cmd = new SQLiteCommand(sql_sale_update, DBConfig.sqlite_connect);
             //執行sql
             DBConfig.sqlite_cmd.ExecuteNonQuery();
 
             //刪除購物車
             this.dataGridView1.Rows.Clear();
+            input_type.Text = "";
+            sale_num.Text = "0";
         }
         public void get_book_info()
         {
-            if (input_bookId.Text == "001")
+            int book_id = 0;
+            if (input_bookId.Text!="")
             {
-                books_name.Text = "測試書本一";
-                books_price.Text = "200";
+                book_id = Convert.ToInt32(input_bookId.Text);
             }
-            else if (input_bookId.Text == "002")
+            //撰寫要執行的sql指令
+            string sql = $"SELECT * FROM book WHERE id = {book_id};";
+            //建立sqlite指令
+            DBConfig.sqlite_cmd = new SQLiteCommand(sql, DBConfig.sqlite_connect);
+            //執行sql
+            DBConfig.sqlite_datareader = DBConfig.sqlite_cmd.ExecuteReader();
+
+            if (DBConfig.sqlite_datareader.HasRows)
             {
-                books_name.Text = "測試書本二";
-                books_price.Text = "400";
+                while (DBConfig.sqlite_datareader.Read()) //read every data
+                {
+                    books_name.Text = Convert.ToString(DBConfig.sqlite_datareader["name"]);
+                    books_price.Text = Convert.ToString(DBConfig.sqlite_datareader["price"]);
+
+                    break;
+                }
+                DBConfig.sqlite_datareader.Close();
             }
             else
             {
@@ -163,7 +179,7 @@ namespace booker
         }
         private void sale_num_TextChanged(object sender, EventArgs e)
         {
-            get_book_info();
+            //get_book_info();
             sales_subtotal();
         }
 
@@ -175,6 +191,10 @@ namespace booker
 
             DataGridViewRowCollection rows = dataGridView1.Rows;
             rows.Add(input_bookId.Text, books_name.Text, price, num, subtotal);
+
+            //恢復預設輸入狀態
+            input_type.Text = "";
+            sale_num.Text = "1";
         }
 
         private void contactUsToolStripMenuItem_Click(object sender, EventArgs e)
@@ -185,6 +205,34 @@ namespace booker
         private void button2_Click(object sender, EventArgs e)
         {
             Insert_DB_Sales();
+        }
+
+        private void input_type_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string type = input_type.Text;
+
+            //撰寫要執行的sql指令
+            string sql = $"SELECT * FROM book WHERE type = '{type}';";
+            //建立sqlite指令
+            DBConfig.sqlite_cmd = new SQLiteCommand(sql, DBConfig.sqlite_connect);
+            //執行sql
+            DBConfig.sqlite_datareader = DBConfig.sqlite_cmd.ExecuteReader();
+
+            input_bookId.Items.Clear(); // 清空原有選項
+
+            if (DBConfig.sqlite_datareader.HasRows)
+            {
+                while (DBConfig.sqlite_datareader.Read()) //read every data
+                {
+                    input_bookId.Items.Add(Convert.ToString(DBConfig.sqlite_datareader["id"]));
+                }
+                DBConfig.sqlite_datareader.Close();
+            }
+            else
+            {
+                input_bookId.Text = "";
+                sale_num.Text = "1";
+            }
         }
     }
 }

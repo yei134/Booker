@@ -43,7 +43,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.sale_num = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.input_bookId = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
@@ -113,6 +112,9 @@
             this.price = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.num = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.sum = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label4 = new System.Windows.Forms.Label();
+            this.input_type = new System.Windows.Forms.ComboBox();
+            this.input_bookId = new System.Windows.Forms.ComboBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -142,6 +144,9 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.input_bookId);
+            this.tabPage1.Controls.Add(this.input_type);
+            this.tabPage1.Controls.Add(this.label4);
             this.tabPage1.Controls.Add(this.input_member);
             this.tabPage1.Controls.Add(this.label9);
             this.tabPage1.Controls.Add(this.button2);
@@ -155,7 +160,6 @@
             this.tabPage1.Controls.Add(this.label3);
             this.tabPage1.Controls.Add(this.sale_num);
             this.tabPage1.Controls.Add(this.label2);
-            this.tabPage1.Controls.Add(this.input_bookId);
             this.tabPage1.Controls.Add(this.label1);
             this.tabPage1.Location = new System.Drawing.Point(4, 54);
             this.tabPage1.Name = "tabPage1";
@@ -210,7 +214,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(24, 213);
+            this.button1.Location = new System.Drawing.Point(24, 277);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 30);
             this.button1.TabIndex = 11;
@@ -221,7 +225,7 @@
             // books_sum
             // 
             this.books_sum.AutoSize = true;
-            this.books_sum.Location = new System.Drawing.Point(75, 176);
+            this.books_sum.Location = new System.Drawing.Point(75, 240);
             this.books_sum.Name = "books_sum";
             this.books_sum.Size = new System.Drawing.Size(18, 20);
             this.books_sum.TabIndex = 10;
@@ -230,7 +234,7 @@
             // books_price
             // 
             this.books_price.AutoSize = true;
-            this.books_price.Location = new System.Drawing.Point(75, 140);
+            this.books_price.Location = new System.Drawing.Point(75, 204);
             this.books_price.Name = "books_price";
             this.books_price.Size = new System.Drawing.Size(18, 20);
             this.books_price.TabIndex = 9;
@@ -239,7 +243,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(20, 176);
+            this.label6.Location = new System.Drawing.Point(20, 240);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(49, 20);
             this.label6.TabIndex = 8;
@@ -248,7 +252,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(20, 140);
+            this.label5.Location = new System.Drawing.Point(20, 204);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(49, 20);
             this.label5.TabIndex = 6;
@@ -257,7 +261,7 @@
             // books_name
             // 
             this.books_name.AutoSize = true;
-            this.books_name.Location = new System.Drawing.Point(75, 104);
+            this.books_name.Location = new System.Drawing.Point(75, 168);
             this.books_name.Name = "books_name";
             this.books_name.Size = new System.Drawing.Size(68, 20);
             this.books_name.TabIndex = 5;
@@ -266,7 +270,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(20, 104);
+            this.label3.Location = new System.Drawing.Point(20, 168);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(49, 20);
             this.label3.TabIndex = 4;
@@ -274,7 +278,7 @@
             // 
             // sale_num
             // 
-            this.sale_num.Location = new System.Drawing.Point(75, 54);
+            this.sale_num.Location = new System.Drawing.Point(75, 118);
             this.sale_num.Name = "sale_num";
             this.sale_num.Size = new System.Drawing.Size(142, 31);
             this.sale_num.TabIndex = 3;
@@ -285,26 +289,16 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(20, 57);
+            this.label2.Location = new System.Drawing.Point(20, 121);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(49, 20);
             this.label2.TabIndex = 2;
             this.label2.Text = "數量";
             // 
-            // input_bookId
-            // 
-            this.input_bookId.Location = new System.Drawing.Point(75, 17);
-            this.input_bookId.Name = "input_bookId";
-            this.input_bookId.Size = new System.Drawing.Size(142, 31);
-            this.input_bookId.TabIndex = 1;
-            this.input_bookId.Text = "001";
-            this.input_bookId.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.input_bookId.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(20, 20);
+            this.label1.Location = new System.Drawing.Point(20, 84);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(49, 20);
             this.label1.TabIndex = 0;
@@ -914,6 +908,67 @@
             this.sum.MinimumWidth = 6;
             this.sum.Name = "sum";
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(20, 47);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(49, 20);
+            this.label4.TabIndex = 16;
+            this.label4.Text = "類別";
+            // 
+            // input_type
+            // 
+            this.input_type.FormattingEnabled = true;
+            this.input_type.Items.AddRange(new object[] {
+            "",
+            "A",
+            "B",
+            "C",
+            "D",
+            "E",
+            "F",
+            "G",
+            "H",
+            "I",
+            "J",
+            "K",
+            "L",
+            "M",
+            "N",
+            "O",
+            "P",
+            "Q",
+            "R",
+            "S",
+            "T",
+            "U",
+            "V",
+            "W",
+            "X",
+            "Y",
+            "Z"});
+            this.input_type.Location = new System.Drawing.Point(75, 43);
+            this.input_type.Name = "input_type";
+            this.input_type.Size = new System.Drawing.Size(142, 28);
+            this.input_type.TabIndex = 17;
+            this.input_type.SelectedIndexChanged += new System.EventHandler(this.input_type_SelectedIndexChanged);
+            this.input_type.TextChanged += new System.EventHandler(this.input_type_SelectedIndexChanged);
+            // 
+            // input_bookId
+            // 
+            this.input_bookId.FormattingEnabled = true;
+            this.input_bookId.Items.AddRange(new object[] {
+            "",
+            "001",
+            "002"});
+            this.input_bookId.Location = new System.Drawing.Point(75, 81);
+            this.input_bookId.Name = "input_bookId";
+            this.input_bookId.Size = new System.Drawing.Size(142, 28);
+            this.input_bookId.TabIndex = 18;
+            this.input_bookId.SelectedIndexChanged += new System.EventHandler(this.textBox1_TextChanged);
+            this.input_bookId.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
@@ -951,7 +1006,6 @@
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.TabPage tabPage3;
-        private System.Windows.Forms.TextBox input_bookId;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TabPage tabPage4;
         private System.Windows.Forms.Label books_name;
@@ -1032,6 +1086,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn price;
         private System.Windows.Forms.DataGridViewTextBoxColumn num;
         private System.Windows.Forms.DataGridViewTextBoxColumn sum;
+        private System.Windows.Forms.ComboBox input_type;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.ComboBox input_bookId;
     }
 }
 
