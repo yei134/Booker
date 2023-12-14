@@ -234,5 +234,71 @@ namespace booker
                 sale_num.Text = "1";
             }
         }
+
+        //==================== SEARCH ====================
+        private void button3_Click(object sender, EventArgs e)
+        {
+            // 賦值
+            string book_id = search_id.Text;
+            string book_name = search_name.Text;
+            string book_type = search_type.Text;
+            int book_price_min = -1;
+            if (search_min.Text != "") {
+                book_price_min = Convert.ToInt32(search_min.Text);
+            }
+            int book_price_max = -1;
+            if (search_max.Text != "")
+            {
+                book_price_max = Convert.ToInt32(search_max.Text);
+            }
+            
+            //撰寫sql
+            string sql = @"SELECT * 
+    FROM book
+    WHERE id NOT NULL";
+            if (book_id!="")
+            {
+                sql += $"AND id LIKE '%{book_id}%'";
+            }
+            if (book_name!="")
+            {
+                sql += $"AND name LIKE '%{book_name}%'";
+            }
+            if (book_type != "")
+            {
+                sql += $"AND type = '{book_type}'";
+            }
+            if (book_price_min > 0)
+            {
+                sql += $"AND price > '{book_price_min}'";
+            }
+            if (book_price_max > 0)
+            {
+                sql += $"AND price < '{book_price_max}'";
+            }
+            sql += $";";
+
+            //建立sqlite指令
+            DBConfig.sqlite_cmd = new SQLiteCommand(sql, DBConfig.sqlite_connect);
+            //執行sql
+            DBConfig.sqlite_datareader = DBConfig.sqlite_cmd.ExecuteReader();
+
+            //顯示
+            this.search_dataGridView.Rows.Clear();//清框顯示器
+            DataGridViewRowCollection rows = search_dataGridView.Rows;
+            if (DBConfig.sqlite_datareader.HasRows)
+            {
+                while (DBConfig.sqlite_datareader.Read()) //read every data
+                {
+                    string ele_id = Convert.ToString(DBConfig.sqlite_datareader["id"]);
+                    string ele_name = Convert.ToString(DBConfig.sqlite_datareader["name"]);
+                    string ele_price = Convert.ToString(DBConfig.sqlite_datareader["price"]);
+                    string ele_num = Convert.ToString(DBConfig.sqlite_datareader["num"]);
+
+                    rows.Add(ele_id, ele_name, ele_price, ele_num); 
+                }
+                DBConfig.sqlite_datareader.Close();
+            }
+        }
     }
 }

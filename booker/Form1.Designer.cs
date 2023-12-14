@@ -30,10 +30,18 @@
         {
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.input_bookId = new System.Windows.Forms.ComboBox();
+            this.input_type = new System.Windows.Forms.ComboBox();
+            this.label4 = new System.Windows.Forms.Label();
             this.input_member = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.item = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.price = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.num = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sum = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.button1 = new System.Windows.Forms.Button();
             this.books_sum = new System.Windows.Forms.Label();
             this.books_price = new System.Windows.Forms.Label();
@@ -45,7 +53,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.search_dataGridView = new System.Windows.Forms.DataGridView();
             this.lookup_Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lookup_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lookup_price = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -53,16 +61,14 @@
             this.label16 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.button3 = new System.Windows.Forms.Button();
-            this.textBox9 = new System.Windows.Forms.TextBox();
-            this.textBox8 = new System.Windows.Forms.TextBox();
+            this.search_max = new System.Windows.Forms.TextBox();
+            this.search_min = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.label13 = new System.Windows.Forms.Label();
-            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.search_type = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.search_name = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.search_id = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.label31 = new System.Windows.Forms.Label();
@@ -107,19 +113,11 @@
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.contactUsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.howToUseThisSystemToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.item = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.price = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.num = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.sum = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.label4 = new System.Windows.Forms.Label();
-            this.input_type = new System.Windows.Forms.ComboBox();
-            this.input_bookId = new System.Windows.Forms.ComboBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.tabPage2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.search_dataGridView)).BeginInit();
             this.tabPage3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
             this.tabPage4.SuspendLayout();
@@ -169,6 +167,67 @@
             this.tabPage1.Text = "銷售";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
+            // input_bookId
+            // 
+            this.input_bookId.FormattingEnabled = true;
+            this.input_bookId.Items.AddRange(new object[] {
+            "",
+            "001",
+            "002"});
+            this.input_bookId.Location = new System.Drawing.Point(75, 81);
+            this.input_bookId.Name = "input_bookId";
+            this.input_bookId.Size = new System.Drawing.Size(142, 28);
+            this.input_bookId.TabIndex = 18;
+            this.input_bookId.SelectedIndexChanged += new System.EventHandler(this.textBox1_TextChanged);
+            this.input_bookId.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            // 
+            // input_type
+            // 
+            this.input_type.FormattingEnabled = true;
+            this.input_type.Items.AddRange(new object[] {
+            "",
+            "A",
+            "B",
+            "C",
+            "D",
+            "E",
+            "F",
+            "G",
+            "H",
+            "I",
+            "J",
+            "K",
+            "L",
+            "M",
+            "N",
+            "O",
+            "P",
+            "Q",
+            "R",
+            "S",
+            "T",
+            "U",
+            "V",
+            "W",
+            "X",
+            "Y",
+            "Z"});
+            this.input_type.Location = new System.Drawing.Point(75, 43);
+            this.input_type.Name = "input_type";
+            this.input_type.Size = new System.Drawing.Size(142, 28);
+            this.input_type.TabIndex = 17;
+            this.input_type.SelectedIndexChanged += new System.EventHandler(this.input_type_SelectedIndexChanged);
+            this.input_type.TextChanged += new System.EventHandler(this.input_type_SelectedIndexChanged);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(20, 47);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(49, 20);
+            this.label4.TabIndex = 16;
+            this.label4.Text = "類別";
+            // 
             // input_member
             // 
             this.input_member.Location = new System.Drawing.Point(337, 474);
@@ -212,13 +271,43 @@
             this.dataGridView1.Size = new System.Drawing.Size(676, 453);
             this.dataGridView1.TabIndex = 12;
             // 
+            // Id
+            // 
+            this.Id.HeaderText = "編號";
+            this.Id.MinimumWidth = 6;
+            this.Id.Name = "Id";
+            // 
+            // item
+            // 
+            this.item.HeaderText = "項目";
+            this.item.MinimumWidth = 6;
+            this.item.Name = "item";
+            // 
+            // price
+            // 
+            this.price.HeaderText = "金額";
+            this.price.MinimumWidth = 6;
+            this.price.Name = "price";
+            // 
+            // num
+            // 
+            this.num.HeaderText = "數量";
+            this.num.MinimumWidth = 6;
+            this.num.Name = "num";
+            // 
+            // sum
+            // 
+            this.sum.HeaderText = "小計";
+            this.sum.MinimumWidth = 6;
+            this.sum.Name = "sum";
+            // 
             // button1
             // 
             this.button1.Location = new System.Drawing.Point(24, 277);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 30);
+            this.button1.Size = new System.Drawing.Size(193, 30);
             this.button1.TabIndex = 11;
-            this.button1.Text = "結帳";
+            this.button1.Text = "加入購物車";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
@@ -306,20 +395,18 @@
             // 
             // tabPage2
             // 
-            this.tabPage2.Controls.Add(this.dataGridView2);
+            this.tabPage2.Controls.Add(this.search_dataGridView);
             this.tabPage2.Controls.Add(this.label16);
             this.tabPage2.Controls.Add(this.label15);
             this.tabPage2.Controls.Add(this.button3);
-            this.tabPage2.Controls.Add(this.textBox9);
-            this.tabPage2.Controls.Add(this.textBox8);
+            this.tabPage2.Controls.Add(this.search_max);
+            this.tabPage2.Controls.Add(this.search_min);
             this.tabPage2.Controls.Add(this.label14);
-            this.tabPage2.Controls.Add(this.textBox7);
-            this.tabPage2.Controls.Add(this.label13);
-            this.tabPage2.Controls.Add(this.textBox6);
+            this.tabPage2.Controls.Add(this.search_type);
             this.tabPage2.Controls.Add(this.label12);
-            this.tabPage2.Controls.Add(this.textBox5);
+            this.tabPage2.Controls.Add(this.search_name);
             this.tabPage2.Controls.Add(this.label11);
-            this.tabPage2.Controls.Add(this.textBox4);
+            this.tabPage2.Controls.Add(this.search_id);
             this.tabPage2.Controls.Add(this.label10);
             this.tabPage2.Location = new System.Drawing.Point(4, 54);
             this.tabPage2.Name = "tabPage2";
@@ -329,21 +416,21 @@
             this.tabPage2.Text = "查詢";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
-            // dataGridView2
+            // search_dataGridView
             // 
-            this.dataGridView2.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.search_dataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.search_dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.search_dataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.lookup_Id,
             this.lookup_name,
             this.lookup_price,
             this.lookup_count});
-            this.dataGridView2.Location = new System.Drawing.Point(286, 6);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.RowHeadersWidth = 51;
-            this.dataGridView2.RowTemplate.Height = 27;
-            this.dataGridView2.Size = new System.Drawing.Size(676, 506);
-            this.dataGridView2.TabIndex = 16;
+            this.search_dataGridView.Location = new System.Drawing.Point(286, 6);
+            this.search_dataGridView.Name = "search_dataGridView";
+            this.search_dataGridView.RowHeadersWidth = 51;
+            this.search_dataGridView.RowTemplate.Height = 27;
+            this.search_dataGridView.Size = new System.Drawing.Size(676, 506);
+            this.search_dataGridView.TabIndex = 16;
             // 
             // lookup_Id
             // 
@@ -395,20 +482,21 @@
             this.button3.TabIndex = 13;
             this.button3.Text = "查詢";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
-            // textBox9
+            // search_max
             // 
-            this.textBox9.Location = new System.Drawing.Point(75, 202);
-            this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(75, 31);
-            this.textBox9.TabIndex = 12;
+            this.search_max.Location = new System.Drawing.Point(75, 202);
+            this.search_max.Name = "search_max";
+            this.search_max.Size = new System.Drawing.Size(75, 31);
+            this.search_max.TabIndex = 12;
             // 
-            // textBox8
+            // search_min
             // 
-            this.textBox8.Location = new System.Drawing.Point(75, 165);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(75, 31);
-            this.textBox8.TabIndex = 11;
+            this.search_min.Location = new System.Drawing.Point(75, 165);
+            this.search_min.Name = "search_min";
+            this.search_min.Size = new System.Drawing.Size(75, 31);
+            this.search_min.TabIndex = 11;
             // 
             // label14
             // 
@@ -419,28 +507,12 @@
             this.label14.TabIndex = 10;
             this.label14.Text = "金額";
             // 
-            // textBox7
+            // search_type
             // 
-            this.textBox7.Location = new System.Drawing.Point(75, 128);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(142, 31);
-            this.textBox7.TabIndex = 9;
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(20, 131);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(49, 20);
-            this.label13.TabIndex = 8;
-            this.label13.Text = "語言";
-            // 
-            // textBox6
-            // 
-            this.textBox6.Location = new System.Drawing.Point(75, 91);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(142, 31);
-            this.textBox6.TabIndex = 7;
+            this.search_type.Location = new System.Drawing.Point(75, 91);
+            this.search_type.Name = "search_type";
+            this.search_type.Size = new System.Drawing.Size(142, 31);
+            this.search_type.TabIndex = 7;
             // 
             // label12
             // 
@@ -451,12 +523,12 @@
             this.label12.TabIndex = 6;
             this.label12.Text = "類別";
             // 
-            // textBox5
+            // search_name
             // 
-            this.textBox5.Location = new System.Drawing.Point(75, 54);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(142, 31);
-            this.textBox5.TabIndex = 5;
+            this.search_name.Location = new System.Drawing.Point(75, 54);
+            this.search_name.Name = "search_name";
+            this.search_name.Size = new System.Drawing.Size(142, 31);
+            this.search_name.TabIndex = 5;
             // 
             // label11
             // 
@@ -467,12 +539,12 @@
             this.label11.TabIndex = 4;
             this.label11.Text = "名稱";
             // 
-            // textBox4
+            // search_id
             // 
-            this.textBox4.Location = new System.Drawing.Point(75, 17);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(142, 31);
-            this.textBox4.TabIndex = 3;
+            this.search_id.Location = new System.Drawing.Point(75, 17);
+            this.search_id.Name = "search_id";
+            this.search_id.Size = new System.Drawing.Size(142, 31);
+            this.search_id.TabIndex = 3;
             // 
             // label10
             // 
@@ -878,97 +950,6 @@
             this.howToUseThisSystemToolStripMenuItem.Size = new System.Drawing.Size(256, 26);
             this.howToUseThisSystemToolStripMenuItem.Text = "How to Use this System";
             // 
-            // Id
-            // 
-            this.Id.HeaderText = "編號";
-            this.Id.MinimumWidth = 6;
-            this.Id.Name = "Id";
-            // 
-            // item
-            // 
-            this.item.HeaderText = "項目";
-            this.item.MinimumWidth = 6;
-            this.item.Name = "item";
-            // 
-            // price
-            // 
-            this.price.HeaderText = "金額";
-            this.price.MinimumWidth = 6;
-            this.price.Name = "price";
-            // 
-            // num
-            // 
-            this.num.HeaderText = "數量";
-            this.num.MinimumWidth = 6;
-            this.num.Name = "num";
-            // 
-            // sum
-            // 
-            this.sum.HeaderText = "小計";
-            this.sum.MinimumWidth = 6;
-            this.sum.Name = "sum";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(20, 47);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(49, 20);
-            this.label4.TabIndex = 16;
-            this.label4.Text = "類別";
-            // 
-            // input_type
-            // 
-            this.input_type.FormattingEnabled = true;
-            this.input_type.Items.AddRange(new object[] {
-            "",
-            "A",
-            "B",
-            "C",
-            "D",
-            "E",
-            "F",
-            "G",
-            "H",
-            "I",
-            "J",
-            "K",
-            "L",
-            "M",
-            "N",
-            "O",
-            "P",
-            "Q",
-            "R",
-            "S",
-            "T",
-            "U",
-            "V",
-            "W",
-            "X",
-            "Y",
-            "Z"});
-            this.input_type.Location = new System.Drawing.Point(75, 43);
-            this.input_type.Name = "input_type";
-            this.input_type.Size = new System.Drawing.Size(142, 28);
-            this.input_type.TabIndex = 17;
-            this.input_type.SelectedIndexChanged += new System.EventHandler(this.input_type_SelectedIndexChanged);
-            this.input_type.TextChanged += new System.EventHandler(this.input_type_SelectedIndexChanged);
-            // 
-            // input_bookId
-            // 
-            this.input_bookId.FormattingEnabled = true;
-            this.input_bookId.Items.AddRange(new object[] {
-            "",
-            "001",
-            "002"});
-            this.input_bookId.Location = new System.Drawing.Point(75, 81);
-            this.input_bookId.Name = "input_bookId";
-            this.input_bookId.Size = new System.Drawing.Size(142, 28);
-            this.input_bookId.TabIndex = 18;
-            this.input_bookId.SelectedIndexChanged += new System.EventHandler(this.textBox1_TextChanged);
-            this.input_bookId.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
@@ -986,7 +967,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.search_dataGridView)).EndInit();
             this.tabPage3.ResumeLayout(false);
             this.tabPage3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
@@ -1021,21 +1002,19 @@
         private System.Windows.Forms.TextBox input_member;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.TextBox textBox8;
+        private System.Windows.Forms.TextBox search_min;
         private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.TextBox textBox7;
-        private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.TextBox search_type;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox search_name;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox search_id;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.TextBox textBox9;
-        private System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.TextBox search_max;
+        private System.Windows.Forms.DataGridView search_dataGridView;
         private System.Windows.Forms.DataGridViewTextBoxColumn lookup_Id;
         private System.Windows.Forms.DataGridViewTextBoxColumn lookup_name;
         private System.Windows.Forms.DataGridViewTextBoxColumn lookup_price;
