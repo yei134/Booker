@@ -20,8 +20,9 @@ namespace booker
         public class DBConfig
         {
             //DB位置設定
-            //log.db要放在【bin\Debug底下】      
-            public static string dbFile = Application.StartupPath + @"\booker.db";
+            //log.db要放在【bin\Debug底下】
+            //由於無法正常載入因此位置改為booker底下
+            public static string dbFile = Application.StartupPath + @"\..\..\booker.db";
 
             public static string dbPath = "Data source=" + dbFile;
 
@@ -253,30 +254,32 @@ namespace booker
             }
             
             //撰寫sql
-            string sql = @"SELECT * 
-    FROM book
-    WHERE id NOT NULL";
+            string sql = @"SELECT book.* , COALESCE(SUM(salebook.num),0) AS salebook_num, COALESCE(SUM(restockbook.num),0) AS restockbook_num
+    FROM book 
+    LEFT JOIN salebook ON book.id = salebook.books_id
+    LEFT JOIN restockbook ON book.id = restockbook.books_id
+    WHERE book.id NOT NULL ";
             if (book_id!="")
             {
-                sql += $"AND id LIKE '%{book_id}%'";
+                sql += $"AND id LIKE '%{book_id}%' ";
             }
             if (book_name!="")
             {
-                sql += $"AND name LIKE '%{book_name}%'";
+                sql += $"AND name LIKE '%{book_name}%' ";
             }
             if (book_type != "")
             {
-                sql += $"AND type = '{book_type}'";
+                sql += $"AND type = '{book_type}' ";
             }
             if (book_price_min > 0)
             {
-                sql += $"AND price > '{book_price_min}'";
+                sql += $"AND price > '{book_price_min}' ";
             }
             if (book_price_max > 0)
             {
-                sql += $"AND price < '{book_price_max}'";
+                sql += $"AND price < '{book_price_max}' ";
             }
-            sql += $";";
+            sql += @"GROUP BY book.id, book.name, book.price, book.type;";
 
             //建立sqlite指令
             DBConfig.sqlite_cmd = new SQLiteCommand(sql, DBConfig.sqlite_connect);
@@ -293,7 +296,10 @@ namespace booker
                     string ele_id = Convert.ToString(DBConfig.sqlite_datareader["id"]);
                     string ele_name = Convert.ToString(DBConfig.sqlite_datareader["name"]);
                     string ele_price = Convert.ToString(DBConfig.sqlite_datareader["price"]);
-                    string ele_num = Convert.ToString(DBConfig.sqlite_datareader["num"]);
+                    int ele_sale_num = Convert.ToInt32(DBConfig.sqlite_datareader["salebook_num"]);
+                    int ele_restock_num = Convert.ToInt32(DBConfig.sqlite_datareader["restockbook_num"]);
+                    string ele_num = Convert.ToString(ele_restock_num- ele_sale_num);
+
 
                     rows.Add(ele_id, ele_name, ele_price, ele_num); 
                 }
