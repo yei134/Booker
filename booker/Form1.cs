@@ -150,7 +150,7 @@ namespace booker
             else
             {
                 books_name.Text = "unknow";
-                books_price.Text = "0";
+                books_price.Text = "1";
             }
         }
 
