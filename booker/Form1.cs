@@ -82,7 +82,7 @@ namespace booker
             //======建立銷售紀錄======
             //撰寫要執行的sql指令；先設定total=0
             string member = input_member.Text;
-            string date = DateTime.Now.ToString("yyyy-MM-dd hh:mm:ss");
+            string date = DateTime.Now.ToString("yyyy-MM-dd");
             string sql_sale_insert = $"INSERT INTO  sale  (total,member_id,employ_id,date) VALUES (0, '{member}',  '123', '{date}' ); SELECT last_insert_rowid();";//改
             //建立sqlite指令
             DBConfig.sqlite_cmd = new SQLiteCommand(sql_sale_insert, DBConfig.sqlite_connect);
@@ -305,6 +305,72 @@ namespace booker
                 }
                 DBConfig.sqlite_datareader.Close();
             }
+        }
+
+        //==================== RESTOCK ====================
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string type = restock_type.Text;
+
+            //撰寫要執行的sql指令
+            string sql = $"SELECT * FROM book WHERE type = '{type}';";
+            //建立sqlite指令
+            DBConfig.sqlite_cmd = new SQLiteCommand(sql, DBConfig.sqlite_connect);
+            //執行sql
+            DBConfig.sqlite_datareader = DBConfig.sqlite_cmd.ExecuteReader();
+
+            restock_id.Items.Clear(); // 清空原有選項
+
+            if (DBConfig.sqlite_datareader.HasRows)
+            {
+                while (DBConfig.sqlite_datareader.Read()) //read every data
+                {
+                    restock_id.Items.Add(Convert.ToString(DBConfig.sqlite_datareader["id"]));
+                }
+                DBConfig.sqlite_datareader.Close();
+            }
+            else
+            {
+                restock_id.Text = "";
+                sale_num.Text = "1";
+            }
+        }
+
+        private void restock_id_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string book_id = restock_id.Text;
+
+            //撰寫要執行的sql指令
+            string sql = $"SELECT * FROM book WHERE id = '{book_id}';";
+            //建立sqlite指令
+            DBConfig.sqlite_cmd = new SQLiteCommand(sql, DBConfig.sqlite_connect);
+            //執行sql
+            DBConfig.sqlite_datareader = DBConfig.sqlite_cmd.ExecuteReader();
+
+            if (DBConfig.sqlite_datareader.HasRows)
+            {
+                while (DBConfig.sqlite_datareader.Read()) //read every data
+                {
+                    restock_id.Items.Add(Convert.ToString(DBConfig.sqlite_datareader["id"]));
+                }
+                DBConfig.sqlite_datareader.Close();
+            }
+        }
+
+        private void textBox11_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            /*
+SELECT sale.date as salesDate, book.type as type, sum(salebook.num) as typesCount
+FROM sale 
+LEFT JOIN salebook on sale.id = salebook.sales_id
+LEFT JOIN book on salebook.books_id = book.id
+GROUP by sale.date, book.type;
+             */
         }
     }
 }

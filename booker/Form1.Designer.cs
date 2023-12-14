@@ -31,8 +31,6 @@
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.input_bookId = new System.Windows.Forms.ComboBox();
-            this.input_type = new System.Windows.Forms.ComboBox();
-            this.label4 = new System.Windows.Forms.Label();
             this.input_member = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
@@ -93,7 +91,6 @@
             this.label20 = new System.Windows.Forms.Label();
             this.textBox11 = new System.Windows.Forms.TextBox();
             this.label18 = new System.Windows.Forms.Label();
-            this.textBox10 = new System.Windows.Forms.TextBox();
             this.label17 = new System.Windows.Forms.Label();
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.button10 = new System.Windows.Forms.Button();
@@ -113,6 +110,13 @@
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.contactUsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.howToUseThisSystemToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.label4 = new System.Windows.Forms.Label();
+            this.input_type = new System.Windows.Forms.ComboBox();
+            this.restock_type = new System.Windows.Forms.ComboBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.restock_id = new System.Windows.Forms.ComboBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -180,53 +184,6 @@
             this.input_bookId.TabIndex = 18;
             this.input_bookId.SelectedIndexChanged += new System.EventHandler(this.textBox1_TextChanged);
             this.input_bookId.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
-            // 
-            // input_type
-            // 
-            this.input_type.FormattingEnabled = true;
-            this.input_type.Items.AddRange(new object[] {
-            "",
-            "A",
-            "B",
-            "C",
-            "D",
-            "E",
-            "F",
-            "G",
-            "H",
-            "I",
-            "J",
-            "K",
-            "L",
-            "M",
-            "N",
-            "O",
-            "P",
-            "Q",
-            "R",
-            "S",
-            "T",
-            "U",
-            "V",
-            "W",
-            "X",
-            "Y",
-            "Z"});
-            this.input_type.Location = new System.Drawing.Point(75, 43);
-            this.input_type.Name = "input_type";
-            this.input_type.Size = new System.Drawing.Size(142, 28);
-            this.input_type.TabIndex = 17;
-            this.input_type.SelectedIndexChanged += new System.EventHandler(this.input_type_SelectedIndexChanged);
-            this.input_type.TextChanged += new System.EventHandler(this.input_type_SelectedIndexChanged);
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(20, 47);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(49, 20);
-            this.label4.TabIndex = 16;
-            this.label4.Text = "類別";
             // 
             // input_member
             // 
@@ -557,6 +514,11 @@
             // 
             // tabPage3
             // 
+            this.tabPage3.Controls.Add(this.label8);
+            this.tabPage3.Controls.Add(this.label13);
+            this.tabPage3.Controls.Add(this.restock_id);
+            this.tabPage3.Controls.Add(this.restock_type);
+            this.tabPage3.Controls.Add(this.label7);
             this.tabPage3.Controls.Add(this.label31);
             this.tabPage3.Controls.Add(this.label29);
             this.tabPage3.Controls.Add(this.label30);
@@ -575,7 +537,6 @@
             this.tabPage3.Controls.Add(this.label20);
             this.tabPage3.Controls.Add(this.textBox11);
             this.tabPage3.Controls.Add(this.label18);
-            this.tabPage3.Controls.Add(this.textBox10);
             this.tabPage3.Controls.Add(this.label17);
             this.tabPage3.Location = new System.Drawing.Point(4, 54);
             this.tabPage3.Name = "tabPage3";
@@ -633,7 +594,7 @@
             // 
             // button5
             // 
-            this.button5.Location = new System.Drawing.Point(24, 231);
+            this.button5.Location = new System.Drawing.Point(24, 292);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(193, 50);
             this.button5.TabIndex = 18;
@@ -692,7 +653,7 @@
             // label25
             // 
             this.label25.AutoSize = true;
-            this.label25.Location = new System.Drawing.Point(135, 196);
+            this.label25.Location = new System.Drawing.Point(135, 235);
             this.label25.Name = "label25";
             this.label25.Size = new System.Drawing.Size(112, 20);
             this.label25.TabIndex = 15;
@@ -701,7 +662,7 @@
             // label26
             // 
             this.label26.AutoSize = true;
-            this.label26.Location = new System.Drawing.Point(20, 196);
+            this.label26.Location = new System.Drawing.Point(20, 235);
             this.label26.Name = "label26";
             this.label26.Size = new System.Drawing.Size(118, 20);
             this.label26.TabIndex = 14;
@@ -710,7 +671,7 @@
             // label23
             // 
             this.label23.AutoSize = true;
-            this.label23.Location = new System.Drawing.Point(135, 164);
+            this.label23.Location = new System.Drawing.Point(135, 203);
             this.label23.Name = "label23";
             this.label23.Size = new System.Drawing.Size(109, 20);
             this.label23.TabIndex = 13;
@@ -719,7 +680,7 @@
             // label24
             // 
             this.label24.AutoSize = true;
-            this.label24.Location = new System.Drawing.Point(20, 164);
+            this.label24.Location = new System.Drawing.Point(20, 203);
             this.label24.Name = "label24";
             this.label24.Size = new System.Drawing.Size(109, 20);
             this.label24.TabIndex = 12;
@@ -728,7 +689,7 @@
             // label21
             // 
             this.label21.AutoSize = true;
-            this.label21.Location = new System.Drawing.Point(135, 131);
+            this.label21.Location = new System.Drawing.Point(135, 170);
             this.label21.Name = "label21";
             this.label21.Size = new System.Drawing.Size(131, 20);
             this.label21.TabIndex = 11;
@@ -737,7 +698,7 @@
             // label22
             // 
             this.label22.AutoSize = true;
-            this.label22.Location = new System.Drawing.Point(20, 131);
+            this.label22.Location = new System.Drawing.Point(20, 170);
             this.label22.Name = "label22";
             this.label22.Size = new System.Drawing.Size(109, 20);
             this.label22.TabIndex = 10;
@@ -746,7 +707,7 @@
             // label19
             // 
             this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(75, 98);
+            this.label19.Location = new System.Drawing.Point(75, 137);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(101, 20);
             this.label19.TabIndex = 9;
@@ -755,7 +716,7 @@
             // label20
             // 
             this.label20.AutoSize = true;
-            this.label20.Location = new System.Drawing.Point(20, 98);
+            this.label20.Location = new System.Drawing.Point(20, 137);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(49, 20);
             this.label20.TabIndex = 8;
@@ -763,31 +724,25 @@
             // 
             // textBox11
             // 
-            this.textBox11.Location = new System.Drawing.Point(75, 54);
+            this.textBox11.Location = new System.Drawing.Point(75, 93);
             this.textBox11.Name = "textBox11";
             this.textBox11.Size = new System.Drawing.Size(142, 31);
             this.textBox11.TabIndex = 7;
+            this.textBox11.TextChanged += new System.EventHandler(this.textBox11_TextChanged);
             // 
             // label18
             // 
             this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(20, 57);
+            this.label18.Location = new System.Drawing.Point(20, 96);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(49, 20);
             this.label18.TabIndex = 6;
             this.label18.Text = "數量";
             // 
-            // textBox10
-            // 
-            this.textBox10.Location = new System.Drawing.Point(75, 17);
-            this.textBox10.Name = "textBox10";
-            this.textBox10.Size = new System.Drawing.Size(142, 31);
-            this.textBox10.TabIndex = 5;
-            // 
             // label17
             // 
             this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(20, 20);
+            this.label17.Location = new System.Drawing.Point(20, 59);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(49, 20);
             this.label17.TabIndex = 4;
@@ -897,6 +852,7 @@
             this.button7.TabIndex = 19;
             this.button7.Text = "銷售統計";
             this.button7.UseVisualStyleBackColor = true;
+            this.button7.Click += new System.EventHandler(this.button7_Click);
             // 
             // button6
             // 
@@ -949,6 +905,155 @@
             this.howToUseThisSystemToolStripMenuItem.Name = "howToUseThisSystemToolStripMenuItem";
             this.howToUseThisSystemToolStripMenuItem.Size = new System.Drawing.Size(256, 26);
             this.howToUseThisSystemToolStripMenuItem.Text = "How to Use this System";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(20, 47);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(49, 20);
+            this.label4.TabIndex = 16;
+            this.label4.Text = "類別";
+            // 
+            // input_type
+            // 
+            this.input_type.FormattingEnabled = true;
+            this.input_type.Items.AddRange(new object[] {
+            "",
+            "A",
+            "B",
+            "C",
+            "D",
+            "E",
+            "F",
+            "G",
+            "H",
+            "I",
+            "J",
+            "K",
+            "L",
+            "M",
+            "N",
+            "O",
+            "P",
+            "Q",
+            "R",
+            "S",
+            "T",
+            "U",
+            "V",
+            "W",
+            "X",
+            "Y",
+            "Z"});
+            this.input_type.Location = new System.Drawing.Point(75, 43);
+            this.input_type.Name = "input_type";
+            this.input_type.Size = new System.Drawing.Size(142, 28);
+            this.input_type.TabIndex = 17;
+            this.input_type.SelectedIndexChanged += new System.EventHandler(this.input_type_SelectedIndexChanged);
+            this.input_type.TextChanged += new System.EventHandler(this.input_type_SelectedIndexChanged);
+            // 
+            // restock_type
+            // 
+            this.restock_type.FormattingEnabled = true;
+            this.restock_type.Items.AddRange(new object[] {
+            "",
+            "A",
+            "B",
+            "C",
+            "D",
+            "E",
+            "F",
+            "G",
+            "H",
+            "I",
+            "J",
+            "K",
+            "L",
+            "M",
+            "N",
+            "O",
+            "P",
+            "Q",
+            "R",
+            "S",
+            "T",
+            "U",
+            "V",
+            "W",
+            "X",
+            "Y",
+            "Z"});
+            this.restock_type.Location = new System.Drawing.Point(75, 22);
+            this.restock_type.Name = "restock_type";
+            this.restock_type.Size = new System.Drawing.Size(142, 28);
+            this.restock_type.TabIndex = 25;
+            this.restock_type.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            this.restock_type.TextChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(20, 26);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(49, 20);
+            this.label7.TabIndex = 24;
+            this.label7.Text = "類別";
+            // 
+            // restock_id
+            // 
+            this.restock_id.FormattingEnabled = true;
+            this.restock_id.Items.AddRange(new object[] {
+            "",
+            "A",
+            "B",
+            "C",
+            "D",
+            "E",
+            "F",
+            "G",
+            "H",
+            "I",
+            "J",
+            "K",
+            "L",
+            "M",
+            "N",
+            "O",
+            "P",
+            "Q",
+            "R",
+            "S",
+            "T",
+            "U",
+            "V",
+            "W",
+            "X",
+            "Y",
+            "Z"});
+            this.restock_id.Location = new System.Drawing.Point(75, 56);
+            this.restock_id.Name = "restock_id";
+            this.restock_id.Size = new System.Drawing.Size(142, 28);
+            this.restock_id.TabIndex = 26;
+            this.restock_id.SelectedIndexChanged += new System.EventHandler(this.restock_id_SelectedIndexChanged);
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(135, 269);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(111, 20);
+            this.label8.TabIndex = 28;
+            this.label8.Text = "book_subtotal";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(20, 269);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(49, 20);
+            this.label13.TabIndex = 27;
+            this.label13.Text = "小計";
             // 
             // Form1
             // 
@@ -1021,7 +1126,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn lookup_count;
         private System.Windows.Forms.TextBox textBox11;
         private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.TextBox textBox10;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Label label25;
         private System.Windows.Forms.Label label26;
@@ -1065,9 +1169,14 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn price;
         private System.Windows.Forms.DataGridViewTextBoxColumn num;
         private System.Windows.Forms.DataGridViewTextBoxColumn sum;
+        private System.Windows.Forms.ComboBox input_bookId;
         private System.Windows.Forms.ComboBox input_type;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.ComboBox input_bookId;
+        private System.Windows.Forms.ComboBox restock_type;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.ComboBox restock_id;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label13;
     }
 }
 
