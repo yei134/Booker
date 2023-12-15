@@ -31,6 +31,8 @@
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.input_bookId = new System.Windows.Forms.ComboBox();
+            this.input_type = new System.Windows.Forms.ComboBox();
+            this.label4 = new System.Windows.Forms.Label();
             this.input_member = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
@@ -69,6 +71,11 @@
             this.search_id = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.restock_id = new System.Windows.Forms.ComboBox();
+            this.restock_type = new System.Windows.Forms.ComboBox();
+            this.label7 = new System.Windows.Forms.Label();
             this.label31 = new System.Windows.Forms.Label();
             this.label29 = new System.Windows.Forms.Label();
             this.label30 = new System.Windows.Forms.Label();
@@ -110,13 +117,6 @@
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.contactUsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.howToUseThisSystemToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.label4 = new System.Windows.Forms.Label();
-            this.input_type = new System.Windows.Forms.ComboBox();
-            this.restock_type = new System.Windows.Forms.ComboBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.restock_id = new System.Windows.Forms.ComboBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -184,6 +184,53 @@
             this.input_bookId.TabIndex = 18;
             this.input_bookId.SelectedIndexChanged += new System.EventHandler(this.textBox1_TextChanged);
             this.input_bookId.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            // 
+            // input_type
+            // 
+            this.input_type.FormattingEnabled = true;
+            this.input_type.Items.AddRange(new object[] {
+            "",
+            "A",
+            "B",
+            "C",
+            "D",
+            "E",
+            "F",
+            "G",
+            "H",
+            "I",
+            "J",
+            "K",
+            "L",
+            "M",
+            "N",
+            "O",
+            "P",
+            "Q",
+            "R",
+            "S",
+            "T",
+            "U",
+            "V",
+            "W",
+            "X",
+            "Y",
+            "Z"});
+            this.input_type.Location = new System.Drawing.Point(75, 43);
+            this.input_type.Name = "input_type";
+            this.input_type.Size = new System.Drawing.Size(142, 28);
+            this.input_type.TabIndex = 17;
+            this.input_type.SelectedIndexChanged += new System.EventHandler(this.input_type_SelectedIndexChanged);
+            this.input_type.TextChanged += new System.EventHandler(this.input_type_SelectedIndexChanged);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(20, 47);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(49, 20);
+            this.label4.TabIndex = 16;
+            this.label4.Text = "類別";
             // 
             // input_member
             // 
@@ -546,6 +593,108 @@
             this.tabPage3.Text = "訂貨";
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(135, 269);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(111, 20);
+            this.label8.TabIndex = 28;
+            this.label8.Text = "book_subtotal";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(20, 269);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(49, 20);
+            this.label13.TabIndex = 27;
+            this.label13.Text = "小計";
+            // 
+            // restock_id
+            // 
+            this.restock_id.FormattingEnabled = true;
+            this.restock_id.Items.AddRange(new object[] {
+            "",
+            "A",
+            "B",
+            "C",
+            "D",
+            "E",
+            "F",
+            "G",
+            "H",
+            "I",
+            "J",
+            "K",
+            "L",
+            "M",
+            "N",
+            "O",
+            "P",
+            "Q",
+            "R",
+            "S",
+            "T",
+            "U",
+            "V",
+            "W",
+            "X",
+            "Y",
+            "Z"});
+            this.restock_id.Location = new System.Drawing.Point(75, 56);
+            this.restock_id.Name = "restock_id";
+            this.restock_id.Size = new System.Drawing.Size(142, 28);
+            this.restock_id.TabIndex = 26;
+            this.restock_id.SelectedIndexChanged += new System.EventHandler(this.restock_id_SelectedIndexChanged);
+            // 
+            // restock_type
+            // 
+            this.restock_type.FormattingEnabled = true;
+            this.restock_type.Items.AddRange(new object[] {
+            "",
+            "A",
+            "B",
+            "C",
+            "D",
+            "E",
+            "F",
+            "G",
+            "H",
+            "I",
+            "J",
+            "K",
+            "L",
+            "M",
+            "N",
+            "O",
+            "P",
+            "Q",
+            "R",
+            "S",
+            "T",
+            "U",
+            "V",
+            "W",
+            "X",
+            "Y",
+            "Z"});
+            this.restock_type.Location = new System.Drawing.Point(75, 22);
+            this.restock_type.Name = "restock_type";
+            this.restock_type.Size = new System.Drawing.Size(142, 28);
+            this.restock_type.TabIndex = 25;
+            this.restock_type.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            this.restock_type.TextChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(20, 26);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(49, 20);
+            this.label7.TabIndex = 24;
+            this.label7.Text = "類別";
+            // 
             // label31
             // 
             this.label31.AutoSize = true;
@@ -771,6 +920,7 @@
             this.button10.TabIndex = 23;
             this.button10.Text = "匯出報表";
             this.button10.UseVisualStyleBackColor = true;
+            this.button10.Click += new System.EventHandler(this.button10_Click);
             // 
             // dataGridView4
             // 
@@ -905,155 +1055,6 @@
             this.howToUseThisSystemToolStripMenuItem.Name = "howToUseThisSystemToolStripMenuItem";
             this.howToUseThisSystemToolStripMenuItem.Size = new System.Drawing.Size(256, 26);
             this.howToUseThisSystemToolStripMenuItem.Text = "How to Use this System";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(20, 47);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(49, 20);
-            this.label4.TabIndex = 16;
-            this.label4.Text = "類別";
-            // 
-            // input_type
-            // 
-            this.input_type.FormattingEnabled = true;
-            this.input_type.Items.AddRange(new object[] {
-            "",
-            "A",
-            "B",
-            "C",
-            "D",
-            "E",
-            "F",
-            "G",
-            "H",
-            "I",
-            "J",
-            "K",
-            "L",
-            "M",
-            "N",
-            "O",
-            "P",
-            "Q",
-            "R",
-            "S",
-            "T",
-            "U",
-            "V",
-            "W",
-            "X",
-            "Y",
-            "Z"});
-            this.input_type.Location = new System.Drawing.Point(75, 43);
-            this.input_type.Name = "input_type";
-            this.input_type.Size = new System.Drawing.Size(142, 28);
-            this.input_type.TabIndex = 17;
-            this.input_type.SelectedIndexChanged += new System.EventHandler(this.input_type_SelectedIndexChanged);
-            this.input_type.TextChanged += new System.EventHandler(this.input_type_SelectedIndexChanged);
-            // 
-            // restock_type
-            // 
-            this.restock_type.FormattingEnabled = true;
-            this.restock_type.Items.AddRange(new object[] {
-            "",
-            "A",
-            "B",
-            "C",
-            "D",
-            "E",
-            "F",
-            "G",
-            "H",
-            "I",
-            "J",
-            "K",
-            "L",
-            "M",
-            "N",
-            "O",
-            "P",
-            "Q",
-            "R",
-            "S",
-            "T",
-            "U",
-            "V",
-            "W",
-            "X",
-            "Y",
-            "Z"});
-            this.restock_type.Location = new System.Drawing.Point(75, 22);
-            this.restock_type.Name = "restock_type";
-            this.restock_type.Size = new System.Drawing.Size(142, 28);
-            this.restock_type.TabIndex = 25;
-            this.restock_type.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
-            this.restock_type.TextChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(20, 26);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(49, 20);
-            this.label7.TabIndex = 24;
-            this.label7.Text = "類別";
-            // 
-            // restock_id
-            // 
-            this.restock_id.FormattingEnabled = true;
-            this.restock_id.Items.AddRange(new object[] {
-            "",
-            "A",
-            "B",
-            "C",
-            "D",
-            "E",
-            "F",
-            "G",
-            "H",
-            "I",
-            "J",
-            "K",
-            "L",
-            "M",
-            "N",
-            "O",
-            "P",
-            "Q",
-            "R",
-            "S",
-            "T",
-            "U",
-            "V",
-            "W",
-            "X",
-            "Y",
-            "Z"});
-            this.restock_id.Location = new System.Drawing.Point(75, 56);
-            this.restock_id.Name = "restock_id";
-            this.restock_id.Size = new System.Drawing.Size(142, 28);
-            this.restock_id.TabIndex = 26;
-            this.restock_id.SelectedIndexChanged += new System.EventHandler(this.restock_id_SelectedIndexChanged);
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(135, 269);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(111, 20);
-            this.label8.TabIndex = 28;
-            this.label8.Text = "book_subtotal";
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(20, 269);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(49, 20);
-            this.label13.TabIndex = 27;
-            this.label13.Text = "小計";
             // 
             // Form1
             // 

@@ -10,6 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+using Excel = Microsoft.Office.Interop.Excel;
 
 namespace booker
 {
@@ -261,7 +262,7 @@ namespace booker
     WHERE book.id NOT NULL ";
             if (book_id!="")
             {
-                sql += $"AND id LIKE '%{book_id}%' ";
+                sql += $"AND book.id LIKE '%{book_id}%' ";
             }
             if (book_name!="")
             {
@@ -364,13 +365,86 @@ namespace booker
 
         private void button7_Click(object sender, EventArgs e)
         {
-            /*
-SELECT sale.date as salesDate, book.type as type, sum(salebook.num) as typesCount
+            //撰寫要執行的sql指令
+            string sql = @"SELECT 
+	sale.date as salesDate, 
+	book.type as type, 
+	sum(salebook.num) as typesCount, 
+	sum(salebook.num*book.price) as typesTotal, 
+	dateCollect.dateCount, 
+	dateCollect.dateTotal
 FROM sale 
 LEFT JOIN salebook on sale.id = salebook.sales_id
 LEFT JOIN book on salebook.books_id = book.id
-GROUP by sale.date, book.type;
-             */
+LEFT JOIN (
+	SELECT sale.date, sum(salebook.num) as dateCount, sum(salebook.num*book.price) as dateTotal
+	FROM sale 
+	LEFT JOIN salebook on sale.id = salebook.sales_id 
+	LEFT JOIN book on salebook.books_id = book.id
+	GROUP by sale.date) as dateCollect on dateCollect.date = sale.date
+GROUP by sale.date, book.type;";
+            //建立sqlite指令
+            DBConfig.sqlite_cmd = new SQLiteCommand(sql, DBConfig.sqlite_connect);
+            //執行sql
+            DBConfig.sqlite_datareader = DBConfig.sqlite_cmd.ExecuteReader();
+
+            //顯示
+            this.dataGridView4.Rows.Clear();//清框顯示器
+            DataGridViewRowCollection rows = dataGridView4.Rows;
+            if (DBConfig.sqlite_datareader.HasRows)
+            {
+                while (DBConfig.sqlite_datareader.Read()) //read every data
+                {
+                    string element_date = Convert.ToString(DBConfig.sqlite_datareader["salesDate"]);
+                    string element_type = Convert.ToString(DBConfig.sqlite_datareader["type"]);
+                    string element_num = Convert.ToString(DBConfig.sqlite_datareader["typesCount"]);
+                    string element_typeTotal = Convert.ToString(DBConfig.sqlite_datareader["typesTotal"]);
+                    string element_dateNum = Convert.ToString(DBConfig.sqlite_datareader["dateCount"]);
+                    string element_dateTotal = Convert.ToString(DBConfig.sqlite_datareader["dateTotal"]);
+
+
+                    rows.Add(element_date, element_type, element_num, element_typeTotal, element_dateNum, element_dateTotal);
+                }
+                DBConfig.sqlite_datareader.Close();
+            }
+        }
+
+        private void button10_Click(object sender, EventArgs e)
+        {
+            // 設定儲存excel檔
+            SaveFileDialog save = new SaveFileDialog();
+            save.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
+            string date = DateTime.Now.ToString("yyMMdd");
+            save.FileName = $"Booker_{date}.csv";
+            if (save.ShowDialog() != DialogResult.OK) return;
+
+            string strFilePath = save.FileName;
+            StringBuilder sbOutput = new StringBuilder();
+
+            string tmp = "";
+            foreach (DataGridViewRow row in dataGridView4.Rows)
+            {
+                if (!row.IsNewRow) // 排除新行（通常是用于添加新数据的行）
+                {
+                    //取出資料表所需欄位
+                    string element_date = row.Cells["overview_date"].Value.ToString();
+                    string element_type = row.Cells["overview_class"].Value.ToString();
+                    string element_num = row.Cells["overview_count"].Value.ToString();
+                    string element_typeTotal = row.Cells["overview_classTotal"].Value.ToString();
+                    string element_dateNum = row.Cells["overview_dateCount"].Value.ToString();
+                    string element_dateTotal = row.Cells["overview_dateTotal"].Value.ToString();
+
+                    tmp = $"{element_date},{element_type},{element_num},{element_typeTotal},{element_dateNum},{element_dateTotal}";
+                    sbOutput.AppendLine(tmp);
+                }
+            }
+
+            // Create and write the csv file
+            System.IO.File.WriteAllText(strFilePath, sbOutput.ToString());
+
+            // To append more lines to the csv file
+            // System.IO.File.AppendAllText(strFilePath, sbOutput.ToString());
+
         }
     }
 }
